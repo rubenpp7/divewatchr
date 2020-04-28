@@ -1,0 +1,20 @@
+eventID,eventDate,eventTime,locationID,locality,decimalLatitude,decimalLongitude,maximumDepthInMeters,bottomTime,partnerName,partnerID,partnerRank,eventRemarks,waterTemperature,visibility,extraWeight,diveType_1,diveType_2,diveType_3
+D-2,2011-08,,La Cresta,"Isla del Fraile, Aguilas (Murcia)",37.407457,-1.548604,12,,,,,,,,,Discover Scuba Diving,boatDive,
+D-1,10/21/2011,,"""frente al centro scubasur""",Almunecar (Granada),36.733577,-3.70523,,,,,,,,,,Open Water Diver,shoreDive,
+D0,10/21/2011,,"""frente al centro scubasur""",Almunecar (Granada),36.733578,-3.705231,,,,,,,,,,Open Water Diver,shoreDive,
+D1,10/22/2011,11:45,Chambao de Joaquin,La Herradura (Granada),36.728883,-3.736961,5,34,,,,,21,Buena,6,Open Water Diver,shoreDive,
+D2,10/22/2011,14:04,La Piedra del Hombre,La Herradura (Granada),36.725076,-3.736712,13.4,36,,,,,22,Buena,6,Open Water Diver,shoreDive,driftDive
+D3,10/23/2011,13:08,La Calita,La Herradura (Granada),36.721808,-3.735178,19,34,,,,,25,Buena,4,Open Water Diver,boatDive,
+D4,10/23/2011,14:34,La Calita,La Herradura (Granada),36.721808,-3.735178,20.5,31,,,,,25,Buena,4,Open Water Diver,boatDive,
+D5,4/2/2012,12:26,,"Isla del Fraile, Aguilas (Murcia)",37.407457,-1.548604,18.4,33,,,,,14,Regular,4,Fun Dive,boatDive,
+D6,4/3/2012,11:27,Pared Sur,"Isla del Fraile, Aguilas (Murcia)",37.407431,-1.547101,21.9,37,,,,,14,Regular,4,Fun Dive,boatDive,
+D7,2012-05,,Marina del Este,Almunecar (Granada),36.722489,-3.728296,,,,,,,13,Regular,4,Research Dive,shoreDive,
+D8,2012-06,,Marina del Este,Almunecar (Granada),36.72249,-3.728297,,,,,,,13,Regular,4,Research Dive,shoreDive,
+D9,6/16/2012,,El Hornillo,Aguilas (Murcia),37.406587,-1.559013,12,57,,,,,,Regular,4,Advanced Open Water Diver,boatDive,buoyancyControlDive
+D11,6/16/2012,,El Hornillo,Aguilas (Murcia),37.406587,-1.559013,11,40,,,,,,Regular,,Advanced Open Water Diver,boatDive,nightDive
+D12,6/17/2012,,La Cresta,"Isla del Fraile, Aguilas (Murcia)",37.407457,-1.548604,30,32,,,,,,Buena,,Advanced Open Water Diver,boatDive,deepDive
+D13,6/17/2012,,El Fontanet,Cabo de Cope (Murcia),37.42451,-1.500005,27,33,,,,,,Buena,,Advanced Open Water Diver,boatDive,wreckDive
+D14,6/17/2012,,La Cresta,"Isla del Fraile, Aguilas (Murcia)",37.407457,-1.548604,15,40,,,,,,,,Fun Dive,boatDive,
+D15,4/22/2013,,Marina del Este,Almunecar (Granada),36.72249,-3.728297,,,,,,,,Buena,6,Research Dive,shoreDive,
+D16,4/9/2014,,Marina del Este,Almunecar (Granada),36.72249,-3.728297,,,,,,,,Regular,6,Research Dive,shoreDive,
+D17,6/19/2014,,El Penhon,Salobrenha (Granada),36.736497,-3.593632,,,,,,,,,,Fun Dive,shoreDive,
