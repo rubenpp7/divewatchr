@@ -27,9 +27,9 @@ scuba <-
 # Double check the Coordinate Reference System (CRS)
 st_crs(scuba)
 
-m <- leaflet(data = scuba) %>% setView(lng = -2 , lat = 37, zoom = 7)
+m <- leaflet(data = scuba) %>% setView(lng = 3 , lat = 37, zoom = 5)
 m %>% addTiles() %>% addMarkers(~decimalLongitude,
                                 ~decimalLatitude,
                                 popup = ~as.character(paste0("Date: ",eventDate)),
-                                label = ~as.character(paste0("Locality: ", locality)),
+                                label = ~as.character(paste0("Dive site: ", locationID, locality)),
                                 clusterOptions = markerClusterOptions())
