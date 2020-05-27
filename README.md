@@ -5,9 +5,8 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 ## Dives distribution map
 
 Access the interactive map here:
-<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a>
+<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
 
-[link](https://rubenpp7.github.io/){:target="_blank"}
 
 
 ![distribution](images/logbook_map.png)
