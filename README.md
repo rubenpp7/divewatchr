@@ -8,8 +8,8 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 
 ## Dive sites depths variation
 
-![divesite_depths](images/divesite_depths.PNG)
+![divesite_depths](images/divesite_depths.png)
 
 ## Logged dives depths
 
-![logged_depths](images/logged_depths.PNG)
+![logged_depths](images/logged_depths.png)
