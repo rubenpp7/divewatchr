@@ -13,15 +13,25 @@ library(ggthemes) # for ggplot themes
 library(dplyr)
 
 
+
+#!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!
+
+# TO DO -> extract both scuba_map & scuba_clean as objects,
+# The function map() needs the object scuba_clean to load the labels
+
+#!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!
+
+
+
 # Logbook in google sheets
-data <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
+logbook <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# # # # # # # # # # # # # # Turn into a funtion # # # # # # # # # # # # # # # # # 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-#logbook_map <- function (data){
+
+load_data <- function (data){
 
 ### READ DATA
 #-------------
@@ -66,11 +76,19 @@ scuba_map <-
            coords = c("decimalLongitude", "decimalLatitude"),
            crs = 4326)
 # Add coordinates as two extra columns
-scuba_map <-
-  scuba_map %>%
+  scuba_map <- scuba_map %>%
   bind_cols(coords_scuba)
 
 # Double check the Coordinate Reference System (CRS)
-st_crs(scuba_map)
+print(st_crs(scuba_map))
+return(scuba_map)
+}
+
+scuba_map <- load_data(logbook)
+
+
+
+
+
 
 #.........................................................

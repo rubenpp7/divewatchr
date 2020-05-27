@@ -14,14 +14,14 @@ library(dplyr)
 
 
 # Logbook in google sheets
-data <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
+logbook <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
  # # # # # # # # # # # # # # Turn into a funtion # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-#logbook_map <- function (data){
+logbook_map <- function (data){
 
 ### READ DATA
 #-------------
@@ -116,10 +116,10 @@ m %>% addProviderTiles('Esri.WorldImagery') %>% # can also try CartoDB.VoyagerOn
                                                           clusterOptions = markerClusterOptions()
                                                           )
 
-#}
+}
 
 
-#logbook_map("1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M")
+logbook_map(logbook)
 
 
 
