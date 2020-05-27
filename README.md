@@ -7,7 +7,7 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 Access the interactive map here:
 <https://rubenpp7.github.io/>
 
-![distribution](images/image_example_map.PNG)
+![distribution](images/logbook_map.PNG)
 
 
 ## Dive sites depths variation
