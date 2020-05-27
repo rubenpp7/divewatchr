@@ -5,6 +5,7 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 ## Dives distribution map
 
 ![distribution](images/image_example_map.PNG)
+![distribution](https://rubenpp7.github.io/)
 
 ## Dive sites depths variation
 
