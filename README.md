@@ -7,6 +7,7 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 Access the interactive map here:
 <a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a>
 
+[link](https://rubenpp7.github.io/){:target="_blank"}
 
 
 ![distribution](images/logbook_map.png)
