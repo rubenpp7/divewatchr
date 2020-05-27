@@ -4,4 +4,12 @@ The aim of this repository is the creation of maps and graphs extracted from a d
 
 ## Dives distribution map
 
-![distribution](image_example_map.PNG)
+![distribution](images/image_example_map.PNG)
+
+## Dive sites depths variation
+
+![divesite_depths](images/divesite_depths.PNG)
+
+## Logged dives depths
+
+![logged_depths](images/logged_depths.PNG)
