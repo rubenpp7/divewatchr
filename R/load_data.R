@@ -14,14 +14,6 @@ library(dplyr)
 
 
 
-#!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!
-
-# TO DO -> extract both scuba_map & scuba_clean as objects,
-# The function map() needs the object scuba_clean to load the labels
-
-#!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!
 
 
 
@@ -81,11 +73,18 @@ scuba_map <-
 
 # Double check the Coordinate Reference System (CRS)
 print(st_crs(scuba_map))
-return(scuba_map)
+
+# Return list with wanted objects
+x <- list(scuba_map = scuba_map, scuba_clean = scuba_clean)
+
+return(x)
 }
 
-scuba_map <- load_data(logbook)
+scuba_data <- load_data(logbook)
 
+# Separate list into objects
+scuba_map <- scuba_data$scuba_map
+scuba_clean <- scuba_data$scuba_clean
 
 
 
