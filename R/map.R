@@ -62,6 +62,9 @@ m %>% addProviderTiles('Esri.WorldImagery') %>% # can also try CartoDB.VoyagerOn
 logbook_map()
 
 
+# can also use
+mapview::mapview(scuba_map)
+
 
 
 

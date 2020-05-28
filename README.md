@@ -13,6 +13,13 @@ Access the interactive map here:
 ***
 
 
+## Logged dives depths
+
+![logged_depths](images/logged_depths.png)  
+
+***
+
+
 ## Dive sites depths variation
 
 ![divesite_depths](images/divesite_depths.png)
@@ -20,9 +27,10 @@ Access the interactive map here:
 ***
 
 
-## Logged dives depths
+## Cumulative number of dives
+I was pretty bored and couldn't get to do a nice simple cumulative with my crappy data so there you got and hard-to-understand fancy mega-plot
 
-![logged_depths](images/logged_depths.png)  
+![cum_dives](images/cum_dives.png)  
 
 ***
 ***  
