@@ -4,7 +4,7 @@ library(leaflet) # for working with maps
 library(htmltools) # for working with html labels
 library(tmap)
 library(tmaptools)
-library(googlesheets4)
+library(googlesheets4) # GOOD
 library(lubridate) # for working with dates
 library(ggplot2)  # for creating graphs
 library(scales)   # to access breaks/formatting functions
@@ -52,6 +52,7 @@ scuba_clean$decimalLongitude <- as.numeric(scuba_clean$decimalLongitude)
 scuba_clean$eventDate <- as.character(scuba_clean$eventDate)
 scuba_clean$maximumDepthInMeters <- as.character(scuba_clean$maximumDepthInMeters)
 scuba_clean$bottomTime <- as.character(scuba_clean$bottomTime)
+scuba_clean <- scuba_clean %>% select (-eventTime)
 
 # Remove NA's introduced by coercion (actually we should fix them in the original table)
 # scuba_clean <- scuba_clean %>% filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
