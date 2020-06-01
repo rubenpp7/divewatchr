@@ -8,7 +8,7 @@ Access the interactive map here:
 <a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
 
 
-![distribution](images/logbook_map.png)
+![distribution](images/logbook_map2.png)
 
 ***
 
