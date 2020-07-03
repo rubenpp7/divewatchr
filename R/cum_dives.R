@@ -9,7 +9,7 @@ ggplot(scuba_map_cum,
   geom_density2d(colour = "darkslategray", size = 1, alpha = 0.2) + 
   geom_step(alpha = 0.7) +
    geom_jitter(alpha = 0.4) +
-   geom_smooth(colour = "chartreuse3") +
+   geom_smooth(colour = "chartreuse3", method = "loess", formula = 'y ~ x') +
    
   
   

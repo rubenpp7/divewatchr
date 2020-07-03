@@ -1,6 +1,7 @@
 # SCUBA logbook
 
-The aim of this repository is the creation of maps and graphs extracted from a dive logbook.
+The aim of this repository is the creation of maps and graphs to visualize a diving logbook.
+Some plots will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives.
 
 ## Dives distribution map
 
@@ -28,7 +29,8 @@ Access the interactive map here:
 
 
 ## Cumulative number of dives
-I was pretty bored and couldn't get to do a nice simple cumulative with my crappy data so there you got and hard-to-understand fancy mega-plot
+I was pretty bored and couldn't get to do a nice simple cumulative with my crappy data so there you got and hard-to-understand fancy mega-plot.
+<i> The blue vertical dashed lines mark the date when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
 
 ![cum_dives](images/cum_dives.png)  
 
@@ -47,3 +49,11 @@ Use [semantic versioning](https://semver.org/), i.e.
 * 1.2.x bigger changes
 
 * 2.x.x huge changes
+
+***  
+***
+
+### Contact
+
+* [Twitter](https://twitter.com/maikspaik)
+* [Instagram](https://www.instagram.com/ruben.pperez/?hl=en)
