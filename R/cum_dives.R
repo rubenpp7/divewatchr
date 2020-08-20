@@ -10,7 +10,7 @@ ggplot(scuba_map_cum,
   geom_step(alpha = 0.7) +
    geom_jitter(alpha = 0.4) +
    geom_smooth(colour = "chartreuse3", method = "loess", formula = 'y ~ x') +
-   
+ 
   
   
  # cool geoms : geom_smooth!!! geom_density2d , geom_density_2d,  geom_count, geom_line, geom_jitter, geom_point, geom_step
