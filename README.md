@@ -53,7 +53,6 @@ Use [semantic versioning](https://semver.org/), i.e.
 ***  
 ***
 
-### Contact
-
-* [Twitter](https://twitter.com/maikspaik)
-* [Instagram](https://www.instagram.com/ruben.pperez/?hl=en)
+<!-- ### Contact -->
+<!-- * [Twitter](https://twitter.com/maikspaik) -->
+<!-- * [Instagram](https://www.instagram.com/ruben.pperez/?hl=en) -->
