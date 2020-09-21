@@ -24,11 +24,12 @@ divesite_depths <- function (data){
   ggplot(scuba_map %>% filter (!is.na(maximumDepthInMeters)), 
          aes(x = reorder(as.factor(locationID), as.numeric(maximumDepthInMeters), FUN = median), # replace locationID by locality to see it by locality
              y = -as.numeric(maximumDepthInMeters), 
-             fill = locality)) +
+             fill = paste0(locality, ", ", country))) +
   # reorder(Species, Sepal.Width, FUN = median)
   ggtitle("Divesite depths") +
   labs(x = "locationID",
-       y = "Depth") +
+       y = "Depth",
+       fill = "Locality") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   geom_boxplot ()
 

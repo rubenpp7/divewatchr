@@ -30,9 +30,7 @@ load_data <- function (data){
 
 # From Google sheets
 (scuba_log <- read_sheet(data, sheet = 1, na = ""))
-
-# From working directory
-# scuba <- read.csv("./data/logbook_data.csv", na = "")
+(scuba_geo <- read_sheet(data, sheet = 3, na = ""))
 
 #.........................................................
 
@@ -43,16 +41,18 @@ load_data <- function (data){
 
 ## Preparation for Leaflet:
 
-# Remove records with no coordinates to prepare dataset for map
-scuba_clean <- scuba_log %>% filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
+# Add coordinates and other geo data + Remove records with no coordinates to prepare dataset for map
+scuba_clean <- scuba_log %>% left_join(scuba_geo, by = "locationID") %>%
+                             filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
 
 # Some columns need a special data type. eventDate needs to be character to be good as a label
-scuba_clean$decimalLatitude <- as.numeric(scuba_clean$decimalLatitude)
-scuba_clean$decimalLongitude <- as.numeric(scuba_clean$decimalLongitude)
-scuba_clean$eventDate <- as.character(scuba_clean$eventDate)
-scuba_clean$maximumDepthInMeters <- as.character(scuba_clean$maximumDepthInMeters)
-scuba_clean$bottomTime <- as.character(scuba_clean$bottomTime)
-scuba_clean <- scuba_clean %>% select (-eventTime)
+scuba_clean <- scuba_clean %>%
+                  mutate(decimalLatitude = as.numeric(decimalLatitude),
+                         decimalLongitude = as.numeric(decimalLongitude),
+                         eventDate = as.character(eventDate),
+                         maximumDepthInMeters = as.character(maximumDepthInMeters),
+                         bottomTime = as.character(bottomTime) ) %>%
+                  select(-eventTime)
 
 # Remove NA's introduced by coercion (actually we should fix them in the original table)
 # scuba_clean <- scuba_clean %>% filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
@@ -69,8 +69,7 @@ scuba_map <-
            coords = c("decimalLongitude", "decimalLatitude"),
            crs = 4326)
 # Add coordinates as two extra columns
-  scuba_map <- scuba_map %>%
-  bind_cols(coords_scuba)
+  scuba_map <- scuba_map %>% bind_cols(coords_scuba)
 
 # Double check the Coordinate Reference System (CRS)
 print(st_crs(scuba_map))
@@ -86,8 +85,6 @@ scuba_data <- load_data(logbook)
 # Separate list into objects
 scuba_map <- scuba_data$scuba_map
 scuba_clean <- scuba_data$scuba_clean
-
-
 
 
 
