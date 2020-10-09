@@ -1,3 +1,18 @@
+# library(tidyverse)
+# library(leaflet) # for working with maps
+# library(htmltools) # for working with html labels
+# library(tmap)
+# library(tmaptools)
+# library(googlesheets4)
+# library(lubridate) # for working with dates
+# library(gridExtra) # for arranging plots
+# library(ggthemes) # for ggplot themes
+# library(sf) # for working with special feature 
+
+library(dplyr) # pipe operator ***
+library(ggplot2)  # for creating graphs ***
+library(scales)   # to access breaks/formatting functions ***
+
 
 
 cum_dives <- function(){
