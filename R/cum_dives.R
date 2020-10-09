@@ -52,6 +52,16 @@ cum_dives()
 
 
 
+scuba_map_emo <- scuba_map %>% filter (eventID ==  "D4" | 
+                                         eventID ==  "D14" |
+                                         eventID ==  "D41" |
+                                         eventID ==  "D73" ) %>%
+  mutate (emoji = "emoji") %>%
+  select (eventID, emoji) %>%
+  st_drop_geometry() %>% 
+  right_join(scuba_map, by = "eventID") %>%
+  arrange(eventDate)
+
 
 ## Add text to the vlines https://stackoverflow.com/questions/18091721/align-geom-text-to-a-geom-vline-in-ggplot2
 # cert=data.frame(date=as.Date(c("2011-10-23", "2012-06-17", "2014-08-27", "2016-07-15")), id=c("OWD", "AOWD", "Rescue Diver", "Divemaster"))
