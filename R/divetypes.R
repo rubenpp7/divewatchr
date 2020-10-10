@@ -21,12 +21,17 @@ library(ggplot2)  # for creating graphs ***
 divetypes_platform <- function (data){
 
   # Plot platformTypes
-  ggplot(scuba_clean, aes(x = platformType)) +
-    geom_bar() +
+  ggplot(scuba_clean, aes(x = platformType, fill = paste0(region, ", " ,country))) +
+    geom_bar(alpha = 0.7, position = "dodge2") +
     ggtitle("Platform type dives") +
-    labs(x = "") +
+    labs(x = "",
+         fill = "region") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
 }
 
 # Render the plot
 divetypes_platform()
+
+
+

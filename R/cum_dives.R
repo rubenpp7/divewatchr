@@ -21,6 +21,7 @@ scuba_map_cum <- scuba_map %>% mutate(cum_dives = seq(1, nrow(scuba_map)))
      
 ggplot(scuba_map_cum, 
        aes(x = as.Date(eventDate), y = as.numeric(cum_dives))) +
+ # scale_color_brewer(palette="Dark2") + # change this palette
   geom_density2d(colour = "darkslategray", size = 1, alpha = 0.2) + 
   geom_step(alpha = 0.7) +
    geom_jitter(alpha = 0.4) +
@@ -51,7 +52,7 @@ ggplot(scuba_map_cum,
 cum_dives()
 
 
-
+# this df has points for emojis (some courses I've made)
 scuba_map_emo <- scuba_map %>% filter (eventID ==  "D4" | 
                                          eventID ==  "D14" |
                                          eventID ==  "D41" |
