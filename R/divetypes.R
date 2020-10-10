@@ -25,7 +25,7 @@ divetypes_platform <- function (data){
     geom_bar(alpha = 0.7, position = "dodge2") +
     ggtitle("Platform type dives") +
     labs(x = "",
-         fill = "region") +
+         fill = "Region") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
 }

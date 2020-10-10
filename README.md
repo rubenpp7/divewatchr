@@ -21,13 +21,6 @@ Access the interactive map here:
 ***
 
 
-## Dive sites depths variation
-
-![divesite_depths](images/divesite_depths.png)
-
-***
-
-
 ## Cumulative number of dives
 I was pretty bored and couldn't get to do a nice simple cumulative with my crappy data so there you got and hard-to-understand fancy mega-plot.
 <i> The blue vertical dashed lines mark the date when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
@@ -36,6 +29,27 @@ I was pretty bored and couldn't get to do a nice simple cumulative with my crapp
 
 ***
 ***  
+***
+
+
+## Dives per country and region
+
+![divecount_reg](images/divecount_reg.png)
+
+***
+
+
+## Dive sites depths variation
+
+![divesite_depths](images/divesite_depths.png)
+
+***
+
+
+## Platform type dives
+
+![divetypes](images/divetypes.png)
+
 ***
 
 
