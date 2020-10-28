@@ -1,24 +1,26 @@
-# library(tidyverse)
-# library(sf) # for working with special feature
-# library(htmltools) # for working with html labels
-# library(tmap)
-# library(tmaptools)
-# library(googlesheets4)
-# library(lubridate) # for working with dates
-# library(ggplot2)  # for creating graphs
-# library(scales)   # to access breaks/formatting functions
-# library(gridExtra) # for arranging plots
-# library(ggthemes) # for ggplot themes
-# library(dplyr)
-
-library(leaflet) # for working with maps and the pipe operator ***
-
+#' Logged dives map
+#'
+#' Creates a leaflet map of the logged dives
+#'
+#' This function creates a leaflet map to visualize the geographical coverage of the logbook together with some information on each dive such as
+#' Bottom Time, Max Depth, Date and Divesite
+#' 
+#' 
+#' @author Ruben Perez Perez
+#' 
+#' @import leaflet
+#' 
+#' @return Returns a map.
+#' 
+#' @export
 
 
 #.........................................................
 
 logbook_map <- function (){
 
+  load("data/scuba_map.RData")
+  load("data/scuba_clean.RData")
 ### MAKING MAP
 #--------------------
 
@@ -60,11 +62,9 @@ m %>% addProviderTiles('Esri.WorldImagery') %>% # can also try CartoDB.VoyagerOn
 
 }
 
-logbook_map()
-
 
 # can also use
-mapview::mapview(scuba_map)
+# mapview::mapview(scuba_map)
 
 
 

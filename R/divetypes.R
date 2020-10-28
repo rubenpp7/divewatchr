@@ -1,25 +1,24 @@
-# 
-# library(tidyverse)
-# library(sf) # for working with special feature
-# library(leaflet) # for working with maps
-# library(htmltools) # for working with html labels
-# library(tmap)
-# library(tmaptools)
-# library(googlesheets4)
-# library(lubridate) # for working with dates
-# library(scales)   # to access breaks/formatting functions
-# library(gridExtra) # for arranging plots
-# library(ggthemes) # for ggplot themes
-# library(dplyr)
-
-library(ggplot2)  # for creating graphs ***
-
+#' Number of dives per dive platform type
+#'
+#' Creates a barplot with the number of dives per region and country and platform type
+#'
+#' This function creates a barplot to visualize the number of dives per region and platform type "poolDive", "boatDive" or "shoreDive"
+#' 
+#' 
+#' @author Ruben Perez Perez
+#' 
+#' @import ggplot2
+#' 
+#' @return Returns a barplot.
+#' 
+#' @export
 
 
 #.........................................................
 
 divetypes_platform <- function (data){
 
+  load("data/scuba_clean.rda")
   # Plot platformTypes
   ggplot(scuba_clean, aes(x = platformType, fill = paste0(region, ", " ,country))) +
     geom_bar(alpha = 0.7, position = "dodge2") +
@@ -30,8 +29,6 @@ divetypes_platform <- function (data){
   
 }
 
-# Render the plot
-divetypes_platform()
 
 
 

@@ -1,25 +1,27 @@
-
-# library(tidyverse)
-# library(leaflet) # for working with maps
-# library(htmltools) # for working with html labels
-# library(tmap)
-# library(tmaptools)
-# library(googlesheets4)
-# library(lubridate) # for working with dates
-# library(scales)   # to access breaks/formatting functions
-# library(gridExtra) # for arranging plots
-# library(ggthemes) # for ggplot themes
-
-library(dplyr) # pipe operator ***
-library(ggplot2)  # for creating graphs ***
-library(sf) # for working with special feature ***
-
+#' Depth variation per divesite
+#'
+#' Creates a plot with the variation of depths of the logged dives
+#'
+#' This function creates a boxplot to visualize the depth variation of the logged dives, offering an overview of the depth conditions
+#' and opportunities of each divesite
+#' 
+#' 
+#' @author Ruben Perez Perez
+#' 
+#' @import ggplot2
+#' @import dplyr
+#' @import sf
+#' 
+#' @return Returns a boxplot.
+#' 
+#' @export
 
 
 #.........................................................
 
 divesite_depths <- function (data){
 
+  load("data/scuba_map.rda")
 # Plot location against depth
 
   ggplot(scuba_map %>% filter (!is.na(maximumDepthInMeters)), 
@@ -38,6 +40,4 @@ divesite_depths <- function (data){
 # intentar agrupar las boxes por locality , check https://stackoverflow.com/questions/43877663/order-multiple-variables-in-ggplot2
 }
 
-# Render the plot
-divesite_depths()
 

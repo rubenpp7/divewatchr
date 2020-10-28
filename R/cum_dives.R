@@ -1,22 +1,25 @@
-# library(tidyverse)
-# library(leaflet) # for working with maps
-# library(htmltools) # for working with html labels
-# library(tmap)
-# library(tmaptools)
-# library(googlesheets4)
-# library(lubridate) # for working with dates
-# library(gridExtra) # for arranging plots
-# library(ggthemes) # for ggplot themes
-# library(sf) # for working with special feature 
-
-library(dplyr) # pipe operator ***
-library(ggplot2)  # for creating graphs ***
-library(scales)   # to access breaks/formatting functions ***
+#' Cumulative dives plot
+#'
+#' Creates a plot with the number of dives along time
+#'
+#' This function creates some visualizations of the number of dives along time including a density plot and a fitted model 
+#' 
+#' 
+#' @author Ruben Perez Perez
+#' 
+#' @import dplyr
+#' @import ggplot2
+#' @import scales 
+#' 
+#' @return Returns a plot.
+#' 
+#' @export
 
 
 
 cum_dives <- function(){
 
+load("data/scuba_map.rda")
 scuba_map_cum <- scuba_map %>% mutate(cum_dives = seq(1, nrow(scuba_map)))                     
      
 ggplot(scuba_map_cum, 
@@ -49,19 +52,17 @@ ggplot(scuba_map_cum,
              alpha = 0.6) 
 }
 
-cum_dives()
-
 
 # this df has points for emojis (some courses I've made)
-scuba_map_emo <- scuba_map %>% filter (eventID ==  "D4" | 
-                                         eventID ==  "D14" |
-                                         eventID ==  "D41" |
-                                         eventID ==  "D73" ) %>%
-  mutate (emoji = "emoji") %>%
-  select (eventID, emoji) %>%
-  st_drop_geometry() %>% 
-  right_join(scuba_map, by = "eventID") %>%
-  arrange(eventDate)
+# scuba_map_emo <- scuba_map %>% filter (eventID ==  "D4" | 
+#                                          eventID ==  "D14" |
+#                                          eventID ==  "D41" |
+#                                          eventID ==  "D73" ) %>%
+#   mutate (emoji = "emoji") %>%
+#   select (eventID, emoji) %>%
+#   st_drop_geometry() %>% 
+#   right_join(scuba_map, by = "eventID") %>%
+#   arrange(eventDate)
 
 
 ## Add text to the vlines https://stackoverflow.com/questions/18091721/align-geom-text-to-a-geom-vline-in-ggplot2

@@ -1,22 +1,28 @@
-# library(tidyverse)
-# library(leaflet) # for working with maps
-# library(htmltools) # for working with html labels
-# library(tmap)
-# library(tmaptools)
-# library(googlesheets4)
-# library(lubridate) # for working with dates
-# library(gridExtra) # for arranging plots
-# library(ggthemes) # for ggplot themes
-library(dplyr) # for the pipe operator ***
-library(ggplot2)  # for creating graphs ***
-library(scales)   # to access breaks/formatting functions ***
-library(sf) # for working with special feature ***
+#' Logged dive max depths
+#'
+#' Creates a scatterplot with the logged maximum depths through time
+#'
+#' This function creates a scatterplot to visualize the maximum depths logged through time, offering a nice overview
+#' of the diving experience regarding depth
+#' 
+#' 
+#' @author Ruben Perez Perez
+#' 
+#' @import ggplot2
+#' @import dplyr
+#' @import scales
+#' @import sf
+#' 
+#' @return Returns a boxplot.
+#' 
+#' @export
 
 #-----------------------------------------------------------------------------------------------------
 
 
 logged_depths <- function (){
 
+  load("data/scuba_map.rda")
 # The problem of making the previous function is that scuba_map does not get generated
 
 # Plot date against max depths https://www.neonscience.org/dc-time-series-plot-ggplot-r
@@ -44,5 +50,3 @@ logged_depths <- function (){
 
 }
 
-# Render the plot
-logged_depths()
