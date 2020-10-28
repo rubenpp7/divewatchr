@@ -23,7 +23,7 @@
 
 
 # Logbook in google sheets
-# logbook <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
+#logbook <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
 
 
 
@@ -43,8 +43,11 @@ load_data <- function (data){
 
 ## Preparation for Leaflet:
 
+
 # Add coordinates and other geo data + Remove records with no coordinates to prepare dataset for map
-scuba_clean <- scuba_log %>% left_join(scuba_geo, by = "locationID") %>%
+scuba_clean <- scuba_log %>% mutate(rowid = str_remove(eventID, "D"),
+                                    rowid = as.numeric(rowid)) %>%
+                             left_join(scuba_geo, by = "locationID") %>%
                              filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
 
 # Some columns need a special data type. eventDate needs to be character to be good as a label

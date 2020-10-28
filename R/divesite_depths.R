@@ -22,9 +22,19 @@
 divesite_depths <- function (data){
 
   load("data/scuba_map.rda")
-# Plot location against depth
 
-  ggplot(scuba_map %>% filter (!is.na(maximumDepthInMeters)), 
+# Drop locations where there is only 1 dive since the point of this plot is showing variation
+  y <- scuba_map %>% filter (locationID %in% (scuba_map %>% 
+                                                group_by(locationID) %>% 
+                                                summarise(n = n()) %>%
+                                                st_drop_geometry() %>%
+                                                filter (n != 1) %>%
+                                                select (locationID))$locationID) %>%
+                     arrange(rowid)
+  
+  
+  # Plot location against depth  
+  ggplot(y %>% filter (!is.na(maximumDepthInMeters)), 
          aes(x = reorder(as.factor(locationID), as.numeric(maximumDepthInMeters), FUN = median), # replace locationID by locality to see it by locality
              y = -as.numeric(maximumDepthInMeters), 
              fill = paste0(locality, ", ", country))) +
