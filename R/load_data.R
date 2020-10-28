@@ -13,6 +13,7 @@
 #' @import sf
 #' @import googlesheets4 
 #' @import usethis
+#' @import stringr
 #' 
 #' @return Reads one R list and the 2 dataframes within it into the R environment.
 #' 
