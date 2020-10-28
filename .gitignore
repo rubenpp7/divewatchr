@@ -2,7 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
-data/.csv
-data/.xlsx
-data/ZOEA
-data/.zip
+data/
