@@ -1,9 +1,9 @@
-#' Loading data
+#' Prepares the data
 #'
-#' Loads logbook data from the data repository into the R session
+#' Loads and prepares the logbook data from the data repository into the R session
 #'
-#' This function reads, updates and prepares the data from the data repository 
-#' so it can be uses by the rest of the functions
+#' This function reads, prepares and locates in the chosen repository the data from the database
+#' so it can be used by the rest of the functions
 #' 
 #' @param data The URL ID of the database in google spreadhsets.
 #' 
@@ -12,14 +12,13 @@
 #' @import dplyr
 #' @import sf
 #' @import googlesheets4 
-#' @import usethis
 #' @import stringr
 #' 
 #' @return Reads one R list and the 2 dataframes within it into the R environment.
 #' 
 #' @export
 #' @examples
-#' load_data("1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M")
+#' prep_data("1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M")
 
 
 
@@ -29,14 +28,15 @@
 
 
 
-load_data <- function (data){
+prep_data <- function (data = "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M",
+                       path = getwd()){
 
 ### READ DATA
 #-------------
 
 # From Google sheets
-(scuba_log <- googlesheets4::read_sheet(data, sheet = "logbook", na = "")) 
-(scuba_geo <- googlesheets4::read_sheet(data, sheet = "coordinates", na = ""))
+(scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
+(scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 
 #.........................................................
 ### DATA PROCESSING
@@ -82,15 +82,10 @@ scuba_map <<- scuba_map %>% bind_cols(coords_scuba) %>%
 # Double check the Coordinate Reference System (CRS)
 print(st_crs(scuba_map))
 
+if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
+save.image(paste0(path, "/data/scuba_map.RData"))
+save.image(paste0(path, "/data/scuba_clean.RData"))
 
-
-# Create data tables as objects so I don't have to run the function everytime (needs R package)
-usethis::use_data(scuba_map, overwrite = TRUE)
-usethis::use_data(scuba_clean, overwrite = TRUE)
-
-# For some reason the previous .rda data files can't be read by the map/leaflet function so we save them also as .RData data files
-save.image("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr/data/scuba_map.RData")
-save.image("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr/data/scuba_clean.RData")
 
 # Return list with wanted objects
 x <- list(scuba_map = scuba_map, scuba_clean = scuba_clean)
