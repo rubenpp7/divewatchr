@@ -59,16 +59,14 @@ scuba_clean <- scuba_clean %>%
                          maximumDepthInMeters = as.character(maximumDepthInMeters),
                          bottomTime = as.character(bottomTime) ) %>%
                   select(-eventTime) %>% 
-                  arrange(eventDate)
+                  arrange(rowid)
 
-# Remove NA's introduced by coercion (actually we should fix them in the original table)
-scuba_clean <<- scuba_clean %>% filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
 
 
 # Extract coordinates
 coords_scuba <-
   scuba_clean %>%
-  select(decimalLongitude, decimalLatitude)
+  select(rowid, decimalLongitude, decimalLatitude)
 
 # Transform scuba_map to a sf data.frame (data in WGS84)
 scuba_map <-
@@ -76,15 +74,19 @@ scuba_map <-
            coords = c("decimalLongitude", "decimalLatitude"),
            crs = 4326)
 # Add coordinates as two extra columns
-scuba_map <<- scuba_map %>% bind_cols(coords_scuba) %>%
-                            arrange(eventDate)
+scuba_map <- scuba_map %>% left_join(coords_scuba, by = "rowid")  %>%
+                           arrange(rowid)
 
 # Double check the Coordinate Reference System (CRS)
 print(st_crs(scuba_map))
 
 if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
-save.image(paste0(path, "/data/scuba_map.RData"))
-save.image(paste0(path, "/data/scuba_clean.RData"))
+save(scuba_map, file = paste0(path, "/data/scuba_map.RData"))
+save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
+save(scuba_map, file = paste0(path, "/data/scuba_map.rda"))
+save(scuba_clean, file = paste0(path, "/data/scuba_clean.rda"))
+# save.image(paste0(path, "/data/scuba_map.RData"))
+# save.image(paste0(path, "/data/scuba_clean.RData"))
 
 
 # Return list with wanted objects

@@ -22,7 +22,7 @@
 
 logged_depths <- function (){
 
-  load("data/scuba_map.rda")
+  load("data/scuba_map.RData")
 # The problem of making the previous function is that scuba_map does not get generated
 
 # Plot date against max depths https://www.neonscience.org/dc-time-series-plot-ggplot-r

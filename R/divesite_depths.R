@@ -21,7 +21,7 @@
 
 divesite_depths <- function (data){
 
-  load("data/scuba_map.rda")
+  load("data/scuba_map.RData")
 
 # Drop locations where there is only 1 dive since the point of this plot is showing variation
   y <- scuba_map %>% filter (locationID %in% (scuba_map %>% 

@@ -19,7 +19,7 @@
 
 cum_dives <- function(){
 
-load("data/scuba_map.rda")
+load("data/scuba_map.RData")
 scuba_map_cum <- scuba_map %>% mutate(cum_dives = seq(1, nrow(scuba_map)))                     
      
 ggplot(scuba_map_cum, 
