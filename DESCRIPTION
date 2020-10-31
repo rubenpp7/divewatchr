@@ -19,7 +19,6 @@ Imports:   dplyr,
   scales,
   sf,
   usethis,
-  stringr,
-  divewatchr
+  stringr
 Depends: 
     R (>= 2.10)
