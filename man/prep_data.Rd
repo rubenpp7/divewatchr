@@ -5,7 +5,7 @@
 \title{Prepares the data}
 \usage{
 prep_data(
-  data = "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M",
+  data = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo",
   path = getwd()
 )
 }
