@@ -30,10 +30,6 @@ update_data <- function (data = "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M",
 use_data(scuba_map, overwrite = TRUE)
 use_data(scuba_clean, overwrite = TRUE)
 
-# For some reason the previous .rda data files can't be read by the map/leaflet function so we save them also as .RData data files
-save.image(paste0(path, "scuba_map.RData"))
-save.image(paste0(path, "scuba_clean.RData"))
 
 }
 
-update_data()
