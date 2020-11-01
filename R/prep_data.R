@@ -5,7 +5,7 @@
 #' This function reads, prepares and locates in the chosen repository the data from the database
 #' so it can be used by the rest of the functions
 #' 
-#' @param data The URL ID of the database in google spreadhsets.
+#' @param data The URL ID of the database in google sheets.
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -18,12 +18,7 @@
 #' 
 #' @export
 #' @examples
-#' prep_data("1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M")
-
-
-
-# Logbook in google sheets
-#logbook <- "1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M"
+#' prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 
 
 

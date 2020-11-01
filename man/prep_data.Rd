@@ -10,7 +10,7 @@ prep_data(
 )
 }
 \arguments{
-\item{data}{The URL ID of the database in google spreadhsets.}
+\item{data}{The URL ID of the database in google sheets.}
 }
 \value{
 Reads one R list and the 2 dataframes within it into the R environment.
@@ -23,7 +23,7 @@ This function reads, prepares and locates in the chosen repository the data from
 so it can be used by the rest of the functions
 }
 \examples{
-prep_data("1qO7_0K1R-4i_MSgtT3zAYbZfxBmPMgQWAi7OmWmb1-M")
+prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 }
 \author{
 Ruben Perez Perez
