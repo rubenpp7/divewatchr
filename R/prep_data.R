@@ -37,7 +37,7 @@ if(!is.na(data)){
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 }
 else{
-if(!dir.exists(paste0(path, "/test_data"))) {dir.create("test_data")}
+test_data()
 # From the test_data (in case sheets don't work)
 (scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
 (scuba_geo <- read.csv(paste0(path, "/test_data/coordinates.csv") ))
