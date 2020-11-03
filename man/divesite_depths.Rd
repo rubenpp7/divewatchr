@@ -4,7 +4,7 @@
 \alias{divesite_depths}
 \title{Depth variation per divesite}
 \usage{
-divesite_depths(data)
+divesite_depths()
 }
 \value{
 Returns a boxplot.

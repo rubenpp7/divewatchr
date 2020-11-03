@@ -19,7 +19,7 @@
 
 #.........................................................
 
-divesite_depths <- function (data){
+divesite_depths <- function (){
 
   load("data/scuba_map.RData")
 

@@ -8,6 +8,8 @@
 #' The output dataset must be copypasted in a google sheets spreadsheet and the user
 #' needs to make sure that the data is formatted as character/text
 #' 
+#' @param path directory location where the files will be read from or written into
+#' 
 #' @author Ruben Perez Perez
 #' 
 #' @import dplyr

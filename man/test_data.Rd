@@ -6,6 +6,9 @@
 \usage{
 test_data(path = getwd())
 }
+\arguments{
+\item{path}{directory location where the files will be read from or written into}
+}
 \value{
 2 csv files with fake data.
 }

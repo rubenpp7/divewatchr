@@ -16,7 +16,7 @@
 
 #.........................................................
 
-divecount_reg <- function (data){
+divecount_reg <- function (){
   
   # Plot dives per country and region
   load("data/scuba_clean.RData")

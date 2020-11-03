@@ -4,7 +4,7 @@
 \alias{divetypes_platform}
 \title{Number of dives per dive platform type}
 \usage{
-divetypes_platform(data)
+divetypes_platform()
 }
 \value{
 Returns a barplot.

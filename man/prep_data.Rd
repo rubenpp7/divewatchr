@@ -4,13 +4,13 @@
 \alias{prep_data}
 \title{Prepares the data}
 \usage{
-prep_data(
-  data = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo",
-  path = getwd()
-)
+prep_data(data = NA, path = getwd())
 }
 \arguments{
-\item{data}{The URL ID of the database in google sheets.}
+\item{data}{The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
+by the test_data function witll be read}
+
+\item{path}{directory location where the files will be read from or written into}
 }
 \value{
 Reads one R list and the 2 dataframes within it into the R environment.

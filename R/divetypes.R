@@ -4,7 +4,6 @@
 #'
 #' This function creates a barplot to visualize the number of dives per region and platform type "poolDive", "boatDive" or "shoreDive"
 #' 
-#' 
 #' @author Ruben Perez Perez
 #' 
 #' @import ggplot2
@@ -16,7 +15,7 @@
 
 #.........................................................
 
-divetypes_platform <- function (data){
+divetypes_platform <- function (){
 
   load("data/scuba_clean.RData")
   # Plot platformTypes

@@ -5,7 +5,9 @@
 #' This function reads, prepares and locates in the chosen repository the data from the database
 #' so it can be used by the rest of the functions
 #' 
-#' @param data The URL ID of the database in google sheets.
+#' @param data The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
+#' by the test_data function witll be read
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -23,16 +25,22 @@
 
 
 
-prep_data <- function (data = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo",
+prep_data <- function (data = NA,
                        path = getwd()){
 
 ### READ DATA
 #-------------
 
+if(!is.na(data)){  
 # From Google sheets
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
-
+}
+else{
+# From the test_data (in case sheets don't work)
+(scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
+(scuba_geo <- read.csv(paste0(path, "/test_data/coordinates.csv") ))
+}
 #.........................................................
 ### DATA PROCESSING
 #--------------------
@@ -92,3 +100,4 @@ return(x)
 
 
 #.........................................................
+prep_data()
