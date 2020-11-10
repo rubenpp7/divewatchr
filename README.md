@@ -1,31 +1,70 @@
-# SCUBA logbook
+# Divewatchr R package
 
-The aim of this repository is the creation of maps and graphs to visualize a diving logbook.
-Some plots will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives.
+The aim of this repository is the creation of a R package for a thorough visualization and exploration of a SCUBA Diving Logbook, including spatio-temporal and categorical plots and maps.
+
+
+The following images shown here will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. This depends only on the database and not on the functions
+
+## Installation
+
+```r
+install.packages("devtools")
+devtools::install.github("rubenpp7/divewatchr")
+library(divewatchr)
+
+# Data load
+prep_data()
+```
+
+
+```
+  eventDate maximumDepthInMeters bottomTime            locationID       locality region country decimalLatitude decimalLongitude platformType
+ 1999-01-18                 32.1         44                 Tug 2         Exiles Sliema   Malta        35.91933        14.498331    shoreDive
+ 1999-01-24                 31.3         32          Um El-Faroud Zurrieq Valley Qrendi   Malta        35.81909        14.449771    shoreDive
+ 1999-02-09                 10.8         43 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
+ 1999-03-31                 30.1         36 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
+ 1999-04-19                  7.4         29  Pared Sur del Fraile        Aguilas Murcia   Spain        37.40743        -1.547101    shoreDive
+ 1999-04-20                 25.9         33 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
+
+```
+
+
+
 
 ## Dives distribution map
 
 Access the interactive map here:
 <a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
+```r
+logbook_map()
 
-
-![distribution](images/logbook_map2.png)
+```
+![](images/logbook_map2.png)
 
 ***
 
 
 ## Logged dives depths
 
-![logged_depths](images/logged_depths.png)  
+
+```r
+logged depths()
+
+```
+![](images/logged_depths.png)  
 
 ***
 
 
 ## Cumulative number of dives
-I was pretty bored and couldn't get to do a nice simple cumulative with my crappy data so there you got and hard-to-understand fancy mega-plot.
+Cumulative hard-to-understand fancy mega-plot.
 <i> The blue vertical dashed lines mark the date when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
 
-![cum_dives](images/cum_dives.png)  
+```r
+cum_dives()
+
+```
+![](images/cum_dives.png)  
 
 ***
 ***  
@@ -34,21 +73,33 @@ I was pretty bored and couldn't get to do a nice simple cumulative with my crapp
 
 ## Dives per country and region
 
-![divecount_reg](images/divecount_reg.png)
+```r
+divecount_reg()
+
+```
+![](images/divecount_reg.png)
 
 ***
 
 
 ## Dive sites depths variation
 
-![divesite_depths](images/divesite_depths.png)
+```r
+divesite_depths()
+
+```
+![](images/divesite_depths.png)
 
 ***
 
 
 ## Platform type dives
 
-![divetypes](images/divetypes.png)
+```r
+divetypes_platform()
+
+```
+![](images/divetypes.png)
 
 ***
 

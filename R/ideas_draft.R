@@ -154,3 +154,16 @@
 #     label='This is a static label',
 #     labelOptions = labelOptions(noHide = T),
 #     icon = icon.fa)
+
+
+
+# Plotly plots
+# 
+# load("data/scuba_map.RData")
+# library(plotly)
+# 
+# fig <- plot_ly(data = scuba_map %>% filter (!is.na(maximumDepthInMeters)), 
+#                x = ~as.Date(eventDate), 
+#                y = ~-as.numeric(maximumDepthInMeters))
+# 
+# fig
