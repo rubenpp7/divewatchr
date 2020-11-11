@@ -3,6 +3,7 @@
 export(cum_dives)
 export(divecount_reg)
 export(divesite_depths)
+export(divetypes)
 export(divetypes_platform)
 export(logbook_map)
 export(logged_depths)

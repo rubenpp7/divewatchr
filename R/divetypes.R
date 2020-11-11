@@ -1,8 +1,8 @@
-#' Number of dives per dive platform type
+#' Number of dives per dive type
 #'
-#' Creates a barplot with the number of dives per region and country and platform type
+#' Creates a barplot with the number of dives types
 #'
-#' This function creates a barplot to visualize the number of dives per region and platform type "poolDive", "boatDive" or "shoreDive"
+#' This function creates a barplot to visualize the number of dives types "Course Leading", "Course Assistance", etc.
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -15,19 +15,16 @@
 
 #.........................................................
 
-divetypes_platform <- function (){
-
+divetypes <- function (){
+  
   load("data/scuba_clean.RData")
   # Plot platformTypes
-  ggplot(scuba_clean, aes(x = platformType, fill = paste0(region, ", " ,country))) +
-    geom_bar(alpha = 0.7, position = "dodge2") +
-    ggtitle("Platform type dives") +
-    labs(x = "",
-         fill = "Region") +
+ count(scuba_clean, diveType) %>% 
+   ggplot(aes(x = reorder(diveType, -n), y = n)) +
+    geom_col(alpha = 0.7, position = "dodge2") +
+    ggtitle("Dive types") +
+    labs(x = "") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
 }
-
-
-
 
