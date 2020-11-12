@@ -19,7 +19,7 @@ divetypes <- function (){
   
   load("data/scuba_clean.RData")
   # Plot platformTypes
- count(scuba_clean, diveType) %>% 
+ count(scuba_clean, diveType) %>% # hutils::mutate_other() to group by nonfrequent
    ggplot(aes(x = reorder(diveType, -n), y = n)) +
     geom_col(alpha = 0.7, position = "dodge2") +
     ggtitle("Dive types") +
