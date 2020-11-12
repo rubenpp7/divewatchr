@@ -35,12 +35,14 @@ if(!is.na(data)){
 # From Google sheets
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
+(scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
 }
 else{
 test_data()
 # From the test_data (in case sheets don't work)
 (scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
 (scuba_geo <- read.csv(paste0(path, "/test_data/coordinates.csv") ))
+(scuba_typ <- read.csv(paste0(path, "/test_data/divetypes.csv") ))
 }
 #.........................................................
 ### DATA PROCESSING
@@ -53,6 +55,7 @@ test_data()
 scuba_clean <- scuba_log %>% mutate(rowid = str_remove(eventID, "D"),
                                     rowid = as.numeric(rowid)) %>%
                              left_join(scuba_geo, by = "locationID") %>%
+                             left_join(scuba_typ, by = "diveType") %>%
                              filter (!is.na(decimalLatitude) & !is.na(decimalLatitude))
 
 # Some columns need a special data type. eventDate needs to be character to be good as a label
@@ -61,7 +64,8 @@ scuba_clean <- scuba_clean %>%
                          decimalLongitude = as.numeric(decimalLongitude),
                          eventDate = as.character(eventDate),
                          maximumDepthInMeters = as.character(maximumDepthInMeters),
-                         bottomTime = as.character(bottomTime) ) %>%
+                         bottomTime = as.character(bottomTime),
+                         diveType = as.character(diveType)) %>%
                   select(-eventTime) %>% 
                   arrange(rowid)
 

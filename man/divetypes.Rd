@@ -4,7 +4,10 @@
 \alias{divetypes}
 \title{Number of dives per dive type}
 \usage{
-divetypes()
+divetypes(n.other = 4)
+}
+\arguments{
+\item{n.other}{number of dives under which a diveType is placed into the "Other" category.}
 }
 \value{
 Returns a barplot.

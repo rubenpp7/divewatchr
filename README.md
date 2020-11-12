@@ -71,6 +71,17 @@ cum_dives()
 ***
 
 
+## Number of dive types
+
+```r
+divetypes()
+
+```
+![](images/dive_types.png)
+
+***
+
+
 ## Dives per country and region
 
 ```r
@@ -99,7 +110,7 @@ divesite_depths()
 divetypes_platform()
 
 ```
-![](images/divetypes.png)
+![](images/platform_types.png)
 
 ***
 
