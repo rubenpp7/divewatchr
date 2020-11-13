@@ -25,8 +25,12 @@ Installing `divewatchr` requires the `devtools` package:
 install.packages("devtools")
 devtools::install.github("rubenpp7/divewatchr")
 library(divewatchr)
-
-# Data load
+```
+#### Data load 
+if no Google Sheets URL is added, a mock dataset is loaded
+```r
+prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+# or
 prep_data()
 ```
 
