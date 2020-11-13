@@ -6,19 +6,15 @@ The aim of this repository is the creation of a R package for a thorough visuali
 The following images shown here will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. This depends only on the database and not on the functions
 
 
-[Installation](#installation)
-[Dives distribution map](#dives-distribution-map)
-[Logged dives depths](#logged-dives-depths)
-[Cumulative number of dives](#cumulative-number-of-dives)
-[Number of dive types](#number-of-dive-types)
-
-[Dives per country and region](#dives-per-country-and-region)
-
-[Dive sites depths variation](#dive-sites-depths-variation)
-
-[Platform type dives](#platform-type-dives)
-
-[Semantic versioning](#semantic-versioning)
+- [Installation](#installation)
+- [Dives distribution map](#dives-distribution-map)
+- [Logged dives depths](#logged-dives-depths)
+- [Cumulative number of dives](#cumulative-number-of-dives)
+- [Number of dive types](#number-of-dive-types)
+- [Dives per country and region](#dives-per-country-and-region)
+- [Dive sites depths variation](#dive-sites-depths-variation)
+- [Platform type dives](#platform-type-dives)
+- [Semantic versioning](#semantic-versioning)
 
 
 ## Installation
