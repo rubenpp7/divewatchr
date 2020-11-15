@@ -27,7 +27,8 @@ devtools::install.github("rubenpp7/divewatchr")
 library(divewatchr)
 ```
 #### Data load 
-if no Google Sheets URL is added, a mock dataset is loaded
+The `prep_data()` function loads data from a dive logbook located in a Google Sheets site.
+<i>if no Google Sheets URL is added, a mock dataset will be automatically loaded so the package functions work on the mock dataset</i>
 ```r
 prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 # or
@@ -36,13 +37,17 @@ prep_data()
 
 
 ```
-  eventDate maximumDepthInMeters bottomTime            locationID       locality region country decimalLatitude decimalLongitude platformType
- 1999-01-18                 32.1         44                 Tug 2         Exiles Sliema   Malta        35.91933        14.498331    shoreDive
- 1999-01-24                 31.3         32          Um El-Faroud Zurrieq Valley Qrendi   Malta        35.81909        14.449771    shoreDive
- 1999-02-09                 10.8         43 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
- 1999-03-31                 30.1         36 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
- 1999-04-19                  7.4         29  Pared Sur del Fraile        Aguilas Murcia   Spain        37.40743        -1.547101    shoreDive
- 1999-04-20                 25.9         33 La Cueva de la Virgen   Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive
+   rowid  eventDate maximumDepthInMeters bottomTime            locationID     locality region country decimalLatitude decimalLongitude platformType                    diveType      diveClass
+   89 2016-07-25                 16.2         44               El Tubo      Aguilas Murcia   Spain        37.38640        -1.587075     boatDive            Fun Dive Leading   Dive Leading
+   90 2016-07-26                 11.6         26           El Castillo      Aguilas Murcia   Spain        37.40018        -1.584053     boatDive            PADI DSD Leading Course Leading
+   91 2016-07-27                 20.5         28  La Cresta del Fraile      Aguilas Murcia   Spain        37.40746        -1.548604     boatDive            Fun Dive Leading   Dive Leading
+   92 2016-07-27                 20.3         32  Pared Sur del Fraile      Aguilas Murcia   Spain        37.40743        -1.547101     boatDive            Fun Dive Leading   Dive Leading
+   93 2016-07-28                  3.6         28       La Casica Verde      Aguilas Murcia   Spain        37.39499        -1.601721    shoreDive            PADI DSD Leading Course Leading
+   94 2016-07-30                 30.5         44  La Cresta del Fraile      Aguilas Murcia   Spain        37.40746        -1.548604     boatDive                 Deep Course       Training
+   95 2016-07-30                   30         37  Pared Sur del Fraile      Aguilas Murcia   Spain        37.40743        -1.547101     boatDive                 Deep Course       Training
+   96 2016-07-31                 31.4         32            El Montoya Cabo de Cope Murcia   Spain        37.41489        -1.516553     boatDive                 Deep Course       Training
+   97 2016-07-31                   26         37 La Cueva de la Virgen Cabo de Cope Murcia   Spain        37.42451        -1.500004     boatDive Deep Course / Nitrox Course       Training
+   98 2016-07-31                 10.5         38           El Hornillo      Aguilas Murcia   Spain        37.40659        -1.559013     boatDive            PADI DSD Leading Course Leading
 
 ```
 
