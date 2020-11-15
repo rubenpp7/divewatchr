@@ -1,9 +1,9 @@
 # Divewatchr R package
 
-The aim of this repository is the creation of a R package for a thorough visualization and exploration of a SCUBA Diving Logbook, including spatio-temporal and categorical plots and maps.
+The aim of this repository is the creation and development of the `divewatchr` R package for a thorough visualization and exploration of a SCUBA Diving Logbook, focusing on  spatio-temporal and categorical plots and maps.
 
 
-The following images shown here belong to my own logbook and will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. <i>This lack of data depends only on the database and not on the functions</i>
+The following images shown here belong to my own logbook and will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. <i>"This lack of data depends only on the database and not on the functions"</i>
 
 
 - [Installation](#installation)
@@ -91,7 +91,7 @@ To create a cumulative plot of the number of dives over time of the loaded logbo
 cum_dives()
 
 ```
-This function actually contains 4 different plots on top of each other creating a relatively-hard-to-understand fancy mega-plot (unnecessary whim of mine).
+This function actually displays 4 different plots on top of each other creating a relatively-hard-to-understand fancy mega-plot (unnecessary whim of mine).
 <i> The blue vertical dashed lines mark the dates when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
 
 
@@ -156,7 +156,7 @@ divetypes_platform()
 <br/><br/>
 
 ###  Semantic versioning
-Use [semantic versioning](https://semver.org/), i.e. 
+This repository uses [semantic versioning](https://semver.org/), i.e. 
 
 * 1.0.0 first version
 
