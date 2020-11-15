@@ -3,7 +3,7 @@
 The aim of this repository is the creation of a R package for a thorough visualization and exploration of a SCUBA Diving Logbook, including spatio-temporal and categorical plots and maps.
 
 
-The following images shown here will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. This depends only on the database and not on the functions
+The following images shown here belong to my own logbook and will seem incomplete because of the lack of high quality data in the dataset, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives. <i>This lack of data depends only on the database and not on the functions</i>
 
 
 - [Installation](#installation)
@@ -25,14 +25,15 @@ Installing `divewatchr` requires the `devtools` package:
 install.packages("devtools")
 devtools::install.github("rubenpp7/divewatchr")
 library(divewatchr)
-```
+```  
+<br/><br/>
 
-#### Data load 
-The `prep_data()` function loads data from a dive logbook located in a Google Sheets site, e.g. [Example logbook dataset](https://docs.google.com/spreadsheets/d/1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo/edit#gid=1795885743)
+#### <i>_Data load_</i>
+The `prep_data()` function loads data from a dive logbook located in a Google Sheets site, e.g. [example logbook dataset](https://docs.google.com/spreadsheets/d/1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo/edit#gid=1795885743) <i> open it in a new tab </i>
 
 <i>If no Google Sheets URL is added, a mock dataset will be automatically loaded so the package functions work on the mock dataset</i>
 ```r
-prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo") # Google Sheets URL ID
 # or
 prep_data()
 ```
@@ -52,61 +53,73 @@ This function creates a table like the following one that will be used by the ot
       98 2016-07-31                 10.5         38           El Hornillo      Aguilas Murcia   Spain        37.40659        -1.559013     boatDive            PADI DSD Leading Course Leading
 
 ```
-
+<br/><br/>
 
 ## Dives distribution map
 
-Access the interactive map here:
-<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
+To create an interactive map of the loaded logbook you can use the following function:
 ```r
 logbook_map()
 
 ```
+
+As a matter of example you can access my own interactive map here (<i>feel free to click and hover over the dive points to find more information about each dive</i>):
+<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
+
 ![](images/logbook_map2.png)
 
 ***
-
+<br/><br/>
 
 ## Logged dives depths
 
+To create a scatterplot with the logged depths over time of the loaded logbook you can use the following function:
 
 ```r
-logged depths()
+logged_depths()
 
 ```
 ![](images/logged_depths.png)  
 
 ***
-
+<br/><br/>
 
 ## Cumulative number of dives
-Cumulative hard-to-understand fancy mega-plot.
-<i> The blue vertical dashed lines mark the date when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
 
+To create a cumulative plot of the number of dives over time of the loaded logbook you can use the following function:
 ```r
 cum_dives()
 
 ```
+This function actually contains 4 different plots on top of each other creating a relatively-hard-to-understand fancy mega-plot (unnecessary whim of mine).
+<i> The blue vertical dashed lines mark the dates when I completed my OWD, AOWD, Rescue and Divemaster courses </i>
+
+
 ![](images/cum_dives.png)  
 
 ***
 ***  
 ***
-
+<br/><br/>
 
 ## Number of dive types
 
+To create a barplot with the number of dive types or categories of the loaded logbook you can use the following function:
+
 ```r
-divetypes()
+divetypes( n.other = 4) 
 
 ```
+<i>The `n.other` argument sets the number of dives under which a `diveType` is placed into the `Other` category.</i>
+
 ![](images/dive_types.png)
 
 ***
-
+<br/><br/>
 
 ## Dives per country and region
 
+To create a barplot with the number of dives per region and country of the loaded logbook you can use the following function:
 ```r
 divecount_reg()
 
@@ -114,21 +127,25 @@ divecount_reg()
 ![](images/divecount_reg.png)
 
 ***
-
+<br/><br/>
 
 ## Dive sites depths variation
 
+To create a boxplot with the depth variation of each divesite of the loaded logbook you can use the following function:
 ```r
-divesite_depths()
+divesite_depths(toofew = 1)
 
 ```
+<i>The `toofew` argument sets the number of logged dives per divesite under which a divesite is excluded from the boxplot for having too few dives for an appropriate interpretation of the depth variation.</i>
+
 ![](images/divesite_depths.png)
 
 ***
-
+<br/><br/>
 
 ## Platform type dives
 
+To create a barplot with the number of dives per platform type (<i>shore, boat or pool</i>) and region of the loaded logbook you can use the following function:
 ```r
 divetypes_platform()
 
@@ -136,7 +153,7 @@ divetypes_platform()
 ![](images/platform_types.png)
 
 ***
-
+<br/><br/>
 
 ###  Semantic versioning
 Use [semantic versioning](https://semver.org/), i.e. 

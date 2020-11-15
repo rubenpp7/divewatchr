@@ -5,6 +5,8 @@
 #' This function creates a boxplot to visualize the depth variation of the logged dives, offering an overview of the depth conditions
 #' and opportunities of each divesite
 #' 
+#' @param toofew number of logged dives per divesite under which a divesite is excluded 
+#' from the boxplot for having too few dives for an appropriate interpretation of the depth variation
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -19,22 +21,22 @@
 
 #.........................................................
 
-divesite_depths <- function (){
+divesite_depths <- function (toofew = 1){
 
   load("data/scuba_map.RData")
 
 # Drop locations where there is only 1 dive since the point of this plot is showing variation
-  y <- scuba_map %>% filter (locationID %in% (scuba_map %>% 
+  y <- scuba_map %>% filter (locationID %in% (scuba_map %>%
                                                 group_by(locationID) %>% 
                                                 summarise(n = n()) %>%
                                                 st_drop_geometry() %>%
-                                                filter (n != 1) %>%
+                                                filter (n > toofew) %>%
                                                 select (locationID))$locationID) %>%
-                     arrange(rowid)
+                     arrange (rowid)
   
   
   # Plot location against depth  
-  ggplot(y %>% filter (!is.na(maximumDepthInMeters)), 
+  ggplot(y %>% filter(!is.na(maximumDepthInMeters)), 
          aes(x = reorder(as.factor(locationID), as.numeric(maximumDepthInMeters), FUN = median), # replace locationID by locality to see it by locality
              y = -as.numeric(maximumDepthInMeters), 
              fill = paste0(locality, ", ", country))) +

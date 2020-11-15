@@ -4,7 +4,11 @@
 \alias{divesite_depths}
 \title{Depth variation per divesite}
 \usage{
-divesite_depths()
+divesite_depths(toofew = 1)
+}
+\arguments{
+\item{toofew}{number of logged dives per divesite under which a divesite is excluded
+from the boxplot for having too few dives for an appropriate interpretation of the depth variation}
 }
 \value{
 Returns a boxplot.

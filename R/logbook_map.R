@@ -44,8 +44,8 @@ m <- leaflet(data = scuba_map)
 m %>% addProviderTiles('Esri.WorldImagery') %>% # can also try CartoDB.VoyagerOnlyLabels OR CartoDB.PositronOnlyLabels in next line
       addProviderTiles("CartoDB.DarkMatterOnlyLabels") %>% addMarkers(~as.numeric(decimalLongitude),
                                                           ~as.numeric(decimalLatitude),
-                                                          popup = ~as.character(paste0("Dive type: ", diveType_1,
-                                                                                       ifelse(is.na(diveType_2), "", paste0(" - ", diveType_2)),
+                                                          popup = ~as.character(paste0("Dive type: ", diveType,
+                                                                                       ifelse(is.na(platformType), "", paste0(" - ", platformType)),
                                                                                        ifelse(is.na(diveType_3), "", paste0(" - ", diveType_3)))),
                                                           popupOptions = popupOptions(), # Change size, opacity, etc
                                                           label = lapply(labs, htmltools::HTML),
