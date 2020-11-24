@@ -5,23 +5,50 @@ output: html_document
   
 
 ```{r include = FALSE}
-library(leaflet)
-library(dplyr)
+devtools::install_github("rubenpp7/divewatchr")
 library(divewatchr)
 ```
 
 ```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_map.RData')
+load('data/scuba_clean.RData')
+logbook_map()
+```
 
-leaflet() %>%
-  setView(lng=174.764, lat = -36.877, zoom = 16) %>%
-  addTiles() %>%
-  addMarkers(lng=174.764, lat =-36.877, popup = "lol")
-
+```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_map.RData')
+logged_depths()
 ```
 
 ```{r}
 setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
 load('data/scuba_clean.RData')
 load('data/scuba_map.RData')
-logbook_map()
+cum_dives()
+```
+
+```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_clean.RData')
+divetypes()
+```
+
+```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_clean.RData')
+divecount_reg()
+```
+
+```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_map.RData')
+divesite_depths()
+```
+
+```{r}
+setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+load('data/scuba_clean.RData')
+divetypes_platform()
 ```
