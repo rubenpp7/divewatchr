@@ -36,8 +36,7 @@ if(!is.na(data)){
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 (scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
-}
-else{
+} else {
 test_data()
 # From the test_data (in case sheets don't work)
 (scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
@@ -65,10 +64,11 @@ scuba_clean <- scuba_clean %>%
                          eventDate = as.character(eventDate),
                          maximumDepthInMeters = as.character(maximumDepthInMeters),
                          bottomTime = as.character(bottomTime),
+                         waterTemperature = as.character(waterTemperature) %>%
+                                            na_if("NULL"),
                          diveType = as.character(diveType)) %>%
                   select(-eventTime) %>% 
                   arrange(rowid)
-
 
 
 # Extract coordinates

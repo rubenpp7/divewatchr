@@ -32,7 +32,8 @@ labs <- lapply(seq(nrow(scuba_clean)), function(i) {
           '<b> Divesite: </b>', scuba_clean[i, "locationID"], ', ', 
           scuba_clean[i, "locality"],'</p><p>', 
           '<b> Max Depth: </b>',  scuba_clean[i, "maximumDepthInMeters"], ' metres', '</p><p>',
-          '<b> Bottom Time: </b>',  scuba_clean[i, "bottomTime"], ' minutes', '</p>') 
+          '<b> Bottom Time: </b>',  scuba_clean[i, "bottomTime"], ' minutes', '</p><p>',
+          '<b> Water Temperature: </b>', scuba_clean[i, "waterTemperature"], ' degrees celsius', '</p>') 
 })
 
 
