@@ -1,26 +1,94 @@
 ---
 title: "Divewatchr Dataset Overview"
+author: "Ruben Perez Perez"
+date: "`r Sys.Date()`"
 output: html_document
 ---
   
+```{r global-options, include=FALSE}
+# Sets size of the plots and saves them in a Fig folder
+knitr::opts_chunk$set(fig.width=10, fig.height=8, fig.path='Figs/',
+                      warning=FALSE, message=FALSE)
 
-```{r include = FALSE}
+# Sets the working directory to parent directory of where the .Rmd is (usually in the files folder)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+
+# Installs and calls the divewatchr R package
 devtools::install_github("rubenpp7/divewatchr")
 library(divewatchr)
+
+```  
+
+This document is meant to provide a thorough visualization and exploration of a SCUBA Diving Logbook, focusing on  spatio-temporal and categorical plots and maps.
+
+
+The following images shown here belong to my own logbook. <i>Please note that some plots may seem incomplete because of the lack of high quality data in the logbook, for example, maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives.</i>
+
+<br/><br/>
+
+## Dives distribution map
+```{r echo=FALSE}
+logbook_map() 
 ```
 
-```{r echo = FALSE}
-setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
-load('data/scuba_map.RData')
-load('data/scuba_clean.RData')
+***
+<br/><br/>
+
+## Number of dive types
+```{r echo=FALSE}
+divetypes()
+```
+
+***
+<br/><br/>
+
+## Cumulative number of dives
+```{r echo=FALSE}
+cum_dives()
+```
+
+***
+<br/><br/>
+
+## Logged dives depths
+```{r echo=FALSE}
+logged_depths()
+```
+
+***
+<br/><br/>
+
+## Dives per country and region
+```{r echo=FALSE}
+divecount_reg()
+```
+
+***
+<br/><br/>
+
+## Dive sites depths variation
+```{r echo=FALSE}
+divesite_depths()
+```
+
+***
+<br/><br/>
+
+## Platform type dives
+```{r echo=FALSE}
+divetypes_platform()
+```
+
+
+
+
+
+```{r echo=FALSE}
+# setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
+# load('data/scuba_map.RData')
+# load('data/scuba_clean.RData')
+
 #scuba_clean[92:101,] %>% select (rowid, eventDate, locationID, locality, region, country, 
 #                                maximumDepthInMeters, bottomTime, diveType,
 #                                platformType, diveClass, decimalLongitude, decimalLatitude)
-logbook_map()
-logged_depths()
-cum_dives()
-divetypes()
-divecount_reg()
-divesite_depths()
-divetypes_platform()
 ```
