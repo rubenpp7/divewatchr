@@ -23,7 +23,7 @@ Installing `divewatchr` requires the `devtools` package:
 
 ```r
 install.packages("devtools")
-devtools::install.github("rubenpp7/divewatchr")
+devtools::install_github("rubenpp7/divewatchr")
 library(divewatchr)
 ```  
 <br/><br/>
