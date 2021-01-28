@@ -8,7 +8,7 @@ prep_data(data = NA, path = getwd())
 }
 \arguments{
 \item{data}{The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
-by the test_data function witll be read}
+by the test_data function will be read}
 
 \item{path}{directory location where the files will be read from or written into}
 }

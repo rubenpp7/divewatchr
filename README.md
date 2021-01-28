@@ -170,5 +170,5 @@ This repository uses [semantic versioning](https://semver.org/), i.e.
 ***
 
 <!-- ### Contact -->
-<!-- * [Twitter](https://twitter.com/maikspaik) -->
+<!-- * [Twitter](https://twitter.com/rubenperper) -->
 <!-- * [Instagram](https://www.instagram.com/ruben.pperez/?hl=en) -->

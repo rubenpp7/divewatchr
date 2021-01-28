@@ -6,7 +6,7 @@
 #' so it can be used by the rest of the functions
 #' 
 #' @param data The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
-#' by the test_data function witll be read
+#' by the test_data function will be read
 #' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
