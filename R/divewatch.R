@@ -21,6 +21,8 @@
 
 divewatch <- function(data = NA){
               prep_data(data)
-              render("files/overview.Rmd")
+              download.file("https://raw.githubusercontent.com/rubenpp7/divewatchr/master/files/overview.Rmd",
+                        "overview.Rmd")
+              render("overview.Rmd")
+              file.remove("overview.Rmd")
 }
-
