@@ -11,7 +11,7 @@ knitr::opts_chunk$set(fig.width=8, fig.height=5.34, fig.path='Figs/',
                       warning=FALSE, message=FALSE)
 
 # Sets the working directory to parent directory of where the .Rmd is (usually in the files folder)
-knitr::opts_knit$set(root.dir = normalizePath(".."))
+# knitr::opts_knit$set(root.dir = normalizePath(".."))
 
 # Installs and calls the divewatchr R package
 devtools::install_github("rubenpp7/divewatchr")
@@ -30,7 +30,9 @@ This document has been created using the [Divewatchr R package](https://github.c
 
 This is an interactive map with detailed information on each dive (<i>feel free to click and hover over the dive points to find more information about each dive</i>):
 
-
+```{r echo=FALSE}
+logbook_map() 
+```
 
 ***
 <br/><br/>
