@@ -7,6 +7,7 @@ The following images shown here belong to my own logbook and will seem incomplet
 
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [Dives distribution map](#dives-distribution-map)
 - [Logged dives depths](#logged-dives-depths)
 - [Cumulative number of dives](#cumulative-number-of-dives)
@@ -26,9 +27,23 @@ install.packages("devtools")
 devtools::install_github("rubenpp7/divewatchr")
 library(divewatchr)
 ```  
+
+## Usage
+
+To create an `.html` file with and overview of your diving logbook just include the Google spreadsheet URL ID of your dataset to the `data` argument of the following function:
+```r
+divewatch(data = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+``` 
+Visualize then your `.html` file in a Web browser to explore your data
+
 <br/><br/>
 
-#### <i>_Data load_</i>
+### How does it work?
+The `divewatch` function works on the following functions to transform a diving logbook stored in a Google Spreadsheets document into a web diving CV
+
+***
+
+#### <i>Data load</i>
 The `prep_data()` function loads data from a dive logbook located in a Google Sheets site, e.g. [example logbook dataset](https://docs.google.com/spreadsheets/d/1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo/edit#gid=1795885743) <i> open it in a new tab </i>
 
 <i>If no Google Sheets URL is added, a mock dataset will be automatically loaded so the package functions work on the mock dataset</i>
@@ -55,7 +70,7 @@ This function creates a table like the following one that will be used by the ot
 ```
 <br/><br/>
 
-## Dives distribution map
+#### <i>Dives distribution map</i>
 
 To create an interactive map of the loaded logbook you can use the following function:
 ```r
@@ -71,7 +86,7 @@ As a matter of example you can access my own interactive map here (<i>feel free 
 ***
 <br/><br/>
 
-## Logged dives depths
+#### <i>Logged dives depths</i>
 
 To create a scatterplot with the logged depths over time of the loaded logbook you can use the following function:
 
@@ -84,7 +99,7 @@ logged_depths()
 ***
 <br/><br/>
 
-## Cumulative number of dives
+#### <i>Cumulative number of dives</i>
 
 To create a cumulative plot of the number of dives over time of the loaded logbook you can use the following function:
 ```r
@@ -102,7 +117,7 @@ This function actually displays 4 different plots on top of each other creating 
 ***
 <br/><br/>
 
-## Number of dive types
+#### <i>Number of dive types</i>
 
 To create a barplot with the number of dive types or categories of the loaded logbook you can use the following function:
 
@@ -117,7 +132,7 @@ divetypes( n.other = 4)
 ***
 <br/><br/>
 
-## Dives per country and region
+#### <i>Dives per country and region</i>
 
 To create a barplot with the number of dives per region and country of the loaded logbook you can use the following function:
 ```r
@@ -129,7 +144,7 @@ divecount_reg()
 ***
 <br/><br/>
 
-## Dive sites depths variation
+#### <i>Dive sites depths variation</i>
 
 To create a boxplot with the depth variation of each divesite of the loaded logbook you can use the following function:
 ```r
@@ -143,7 +158,7 @@ divesite_depths(toofew = 1)
 ***
 <br/><br/>
 
-## Platform type dives
+#### <i>Platform type dives</i>
 
 To create a barplot with the number of dives per platform type (<i>shore, boat or pool</i>) and region of the loaded logbook you can use the following function:
 ```r
