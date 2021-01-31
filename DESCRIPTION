@@ -19,6 +19,8 @@ Imports:   dplyr,
   scales,
   sf,
   usethis,
-  stringr
+  stringr,
+  rmarkdown,
+  forcats
 Depends: 
     R (>= 2.10)
