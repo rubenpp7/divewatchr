@@ -21,6 +21,7 @@ Imports:   dplyr,
   usethis,
   stringr,
   rmarkdown,
-  forcats
+  forcats,
+  tidyr
 Depends: 
     R (>= 2.10)

@@ -2,8 +2,16 @@
 title: "Diving Logbook Overview"
 author: "Ruben Perez Perez"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  html_document:
+      toc: true
+      toc_float: true
+      theme: cerulean
+      df_print: kable 
+        
 ---
+<!-- "df_print: pages" can make pages out of the table-->
+
   
 ```{r global-options, include=FALSE}
 # Sets size of the plots and saves them in a Fig folder
@@ -17,6 +25,7 @@ knitr::opts_chunk$set(fig.width=8, fig.height=5.34, fig.path='Figs/',
 # devtools::install_github("rubenpp7/divewatchr")
 # library(divewatchr)
 
+
 ```  
 
 <br></br>
@@ -25,8 +34,18 @@ This document has been created using the [Divewatchr R package](https://github.c
 <i>Please note that some plots may seem incomplete. This is due to the lack of high quality data in the logbook, e.g. maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives.</i>
 
 
+<!-- Making tabs  
+```{css echo=FALSE}
+.tabset h2 {display: none;}
+``` -->
 
-## Dives distribution map
+# {.tabset .tabset-fade}
+
+<!-- <h2>Maps and plots</h2> -->
+## Maps and plots
+
+
+### Dives distribution map
 
 This is an interactive map with detailed information on each dive (<i>feel free to click and hover over the dive points to find more information about each dive</i>):
 
@@ -37,7 +56,7 @@ logbook_map()
 ***
 <br/><br/>
 
-## Number of dive types
+### Number of dive types
 
 This barplot shows the number of dives per dive type and class. It reflects the diving experience of the diver regarding performance and type of training.
 
@@ -48,7 +67,7 @@ divetypes()
 ***
 <br/><br/>
 
-## Cumulative number of dives
+### Cumulative number of dives
 
 This plot shows the cumulative number of dives over time. It reflects the overall diving experience of the diver.
 
@@ -59,7 +78,7 @@ cum_dives()
 ***
 <br/><br/>
 
-## Logged dives depths
+### Logged dives depths
 
 This scatterplot shows the maximum depths of a number of dives over time. It reflects the experience of the diver regarding depth.
 
@@ -70,7 +89,7 @@ logged_depths()
 ***
 <br/><br/>
 
-## Dives per country and region
+### Dives per country and region
 
 This barplot shows the number of dives per region and country. It reflects the experience of the diver regarding variety of divesites.
 
@@ -81,7 +100,7 @@ divecount_reg()
 ***
 <br/><br/>
 
-## Dive sites depths variation
+### Dive sites depths variation
 
 This boxplot shows the maximum depth variation of each divesite according to the data collected from this logbook. This plot can be helpful for planning dives or trainings with specific depth requirements.
 
@@ -92,7 +111,7 @@ divesite_depths()
 ***
 <br/><br/>
 
-## Platform type dives
+### Platform type dives
 
 This barplot shows the number of dives per platform and region/country (boat, shore, pool). This plot gives a glimpse of the experience of the diver regarding the entrance to the water.
 
@@ -100,8 +119,41 @@ This barplot shows the number of dives per platform and region/country (boat, sh
 divetypes_platform()
 ```
 
+***
+<br/><br/>
 
+<!-- <h2>Data</h2> -->
+## Data 
 
+### Highlights
+
+```{r echo=FALSE, rows.print=15}
+load('data/scuba_clean.RData')
+
+tidyr::gather(data.frame(numberOfDives = as.character(nrow(scuba_clean)),
+           maxDepth = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), " meters"),
+           totalBottomTime = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), " hours"),
+           maxBottomTimeInADive = paste0(max(as.numeric(scuba_clean$bottomTime), na.rm = TRUE), " minutes"),
+           divingSince = paste0(round(as.numeric(difftime(Sys.Date(), min(scuba_clean$eventDate), units = "days"))/365.25), " years ago"),
+           lastDive = paste0(max(scuba_clean$eventDate),
+                             " = ",
+                             paste0(round(as.numeric(difftime(Sys.Date(), max(scuba_clean$eventDate), units = "days"))), " days ago"))), 
+           key = "key", 
+           value = "value")
+
+# dplyr::transmute(scuba_clean, maximumDepth = max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE))
+```
+
+***
+<br/><br/>
+
+### Logbook data
+
+```{r echo=FALSE, rows.print=15}
+load('data/scuba_clean.RData')
+
+dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country)
+```
 
 
 ```{r echo=FALSE}
