@@ -131,15 +131,16 @@ divetypes_platform()
 load('data/scuba_clean.RData')
 
 tidyr::gather(data.frame("Number of dives" = as.character(nrow(scuba_clean)),
-           "Maximum depth" = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), " meters"),
-           "Total bottom time" = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), " hours"),
-           "Maximum bottom time in a dive" = paste0(max(as.numeric(scuba_clean$bottomTime), na.rm = TRUE), " minutes"),
-           "Diving since" = paste0(round(as.numeric(difftime(Sys.Date(), min(scuba_clean$eventDate), units = "days"))/365.25), " years ago"),
-           "Last dive" = paste0(max(scuba_clean$eventDate),
-                             " = ",
-                             paste0(round(as.numeric(difftime(Sys.Date(), max(scuba_clean$eventDate), units = "days"))), " days ago"))), 
-           key = "key", 
-           value = "value")
+                         "Maximum depth" = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), " meters"),
+                         "Total bottom time" = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), " hours"),
+                         "Maximum bottom time in a dive" = paste0(max(as.numeric(scuba_clean$bottomTime), na.rm = TRUE), " minutes"),
+                         "Diving since" = paste0(round(as.numeric(difftime(Sys.Date(), min(scuba_clean$eventDate), units = "days"))/365.25), " years ago"),
+                         "Last dive" = paste0(max(scuba_clean$eventDate),
+                                              " = ",
+                                              paste0(round(as.numeric(difftime(Sys.Date(), max(scuba_clean$eventDate), units = "days"))), " days ago")),
+                         "Number of dive sites" = nrow(dplyr::distinct(dplyr::select(scuba_clean, locationID))) ), 
+               key = "key", 
+               value = "value")
 
 # dplyr::transmute(scuba_clean, maximumDepth = max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE))
 ```
