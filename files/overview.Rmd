@@ -14,8 +14,8 @@ knitr::opts_chunk$set(fig.width=8, fig.height=5.34, fig.path='Figs/',
 # knitr::opts_knit$set(root.dir = normalizePath(".."))
 
 # Installs and calls the divewatchr R package
-devtools::install_github("rubenpp7/divewatchr")
-library(divewatchr)
+# devtools::install_github("rubenpp7/divewatchr")
+# library(divewatchr)
 
 ```  
 
