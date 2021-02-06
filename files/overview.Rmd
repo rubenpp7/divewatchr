@@ -130,12 +130,12 @@ divetypes_platform()
 ```{r echo=FALSE, rows.print=15}
 load('data/scuba_clean.RData')
 
-tidyr::gather(data.frame(numberOfDives = as.character(nrow(scuba_clean)),
-           maxDepth = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), " meters"),
-           totalBottomTime = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), " hours"),
-           maxBottomTimeInADive = paste0(max(as.numeric(scuba_clean$bottomTime), na.rm = TRUE), " minutes"),
-           divingSince = paste0(round(as.numeric(difftime(Sys.Date(), min(scuba_clean$eventDate), units = "days"))/365.25), " years ago"),
-           lastDive = paste0(max(scuba_clean$eventDate),
+tidyr::gather(data.frame("Number of dives" = as.character(nrow(scuba_clean)),
+           "Maximum depth" = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), " meters"),
+           "Total bottom time" = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), " hours"),
+           "Maximum bottom time in a dive" = paste0(max(as.numeric(scuba_clean$bottomTime), na.rm = TRUE), " minutes"),
+           "Diving since" = paste0(round(as.numeric(difftime(Sys.Date(), min(scuba_clean$eventDate), units = "days"))/365.25), " years ago"),
+           "Last dive" = paste0(max(scuba_clean$eventDate),
                              " = ",
                              paste0(round(as.numeric(difftime(Sys.Date(), max(scuba_clean$eventDate), units = "days"))), " days ago"))), 
            key = "key", 
@@ -155,6 +155,13 @@ load('data/scuba_clean.RData')
 dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country)
 ```
 
+***
+<br/><br/>
+
+<!-- <h2>Data</h2> -->
+## Titulations 
+
+Still under construction
 
 ```{r echo=FALSE}
 # setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
