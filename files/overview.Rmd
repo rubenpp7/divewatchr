@@ -159,7 +159,7 @@ dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = m
 <br/><br/>
 
 <!-- <h2>Data</h2> -->
-## Titulations 
+## Certifications 
 
 Still under construction
 
