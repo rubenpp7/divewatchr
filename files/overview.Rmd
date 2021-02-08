@@ -164,6 +164,14 @@ dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = m
 
 Still under construction
 
+<!-- <h2>Maps and plots</h2> -->
+## About
+
+- Citation
+- Column names explanation
+
+
+
 ```{r echo=FALSE}
 # setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
 # load('data/scuba_map.RData')
