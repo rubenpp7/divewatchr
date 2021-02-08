@@ -127,6 +127,8 @@ divetypes_platform()
 
 ### Highlights
 
+This data frame shows some highlights extracted from the diving logbook. Please take into account that not all the data (such as dates, depths or bottom times) are always recorded for every dive.
+
 ```{r echo=FALSE}
 logbook_highlights()
 ```
@@ -135,6 +137,8 @@ logbook_highlights()
 <br/><br/>
 
 ### Logbook data
+
+This data frame shows the diving logbook used. Personal information such as eventRemarks are omitted from this data frame
 
 ```{r echo=FALSE, rows.print=15}
 load('data/scuba_clean.RData')

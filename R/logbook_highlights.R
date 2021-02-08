@@ -23,7 +23,10 @@ logbook_highlights <- function(){
 load('data/scuba_clean.RData')
 
 gather(data.frame("Number_of_dives" = as.character(nrow(scuba_clean)),
-                  "Number_of_dive_sites" = nrow(distinct(select(scuba_clean, locationID))), 
+                  "Number_of_dive_sites" = paste0(nrow(distinct(select(scuba_clean, locationID))),
+                                                  " dive sites in ",
+                                                  nrow(distinct(select(scuba_clean, country))),
+                                                  " countries"), 
                   "Maximum_depth" = paste0(max(as.numeric(scuba_clean$maximumDepthInMeters), na.rm = TRUE), 
                                                     " meters"),
                   "Total_bottom_time" = paste0(round(sum(as.numeric(scuba_clean$bottomTime), na.rm = TRUE)/60), 
