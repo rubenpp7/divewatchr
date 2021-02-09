@@ -9,6 +9,7 @@
 #' @author Ruben Perez Perez
 #' 
 #' @import leaflet
+#' @import htmltools
 #' 
 #' @return Returns a map.
 #' 
@@ -49,7 +50,7 @@ m %>% addProviderTiles('Esri.WorldImagery') %>% # can also try CartoDB.VoyagerOn
                                                                                        ifelse(is.na(platformType), "", paste0(" - ", platformType)),
                                                                                        ifelse(is.na(diveType_3), "", paste0(" - ", diveType_3)))),
                                                           popupOptions = popupOptions(), # Change size, opacity, etc
-                                                          label = lapply(labs, htmltools::HTML),
+                                                          label = lapply(labs, HTML),
                                                           labelOptions = labelOptions(direction = "left",
                                                                                       opacity = 0.9,
                                                                                       style = list(

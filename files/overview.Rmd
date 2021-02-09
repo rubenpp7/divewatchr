@@ -143,7 +143,8 @@ This data frame shows the diving logbook used. Personal information such as even
 ```{r echo=FALSE, rows.print=15}
 load('data/scuba_clean.RData')
 
-dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country)
+
+knitr::kable(dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country))
 ```
 
 ***
