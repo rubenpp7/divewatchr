@@ -91,6 +91,7 @@ print(st_crs(scuba_map))
 if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
 save(scuba_map, file = paste0(path, "/data/scuba_map.RData"))
 save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
+
 #save(scuba_map, file = paste0(path, "/data/scuba_map.rda"))
 #save(scuba_clean, file = paste0(path, "/data/scuba_clean.rda"))
 # save.image(paste0(path, "/data/scuba_map.RData"))
