@@ -153,7 +153,12 @@ knitr::kable(dplyr::transmute (scuba_clean, eventDate, locationID, locality, max
 <!-- <h2>Data</h2> -->
 ## Certifications 
 
-Still under construction
+```{r echo=FALSE, rows.print=15}
+load('data/scuba_cert.RData')
+
+
+knitr::kable(scuba_cert)
+```
 
 <!-- <h2>Maps and plots</h2> -->
 ## About

@@ -36,12 +36,14 @@ if(!is.na(data)){
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 (scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
+(scuba_cert <- read_sheet(data, sheet = "certifications", na = ""))  
 } else {
 test_data()
 # From the test_data (in case sheets don't work)
 (scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
 (scuba_geo <- read.csv(paste0(path, "/test_data/coordinates.csv") ))
 (scuba_typ <- read.csv(paste0(path, "/test_data/divetypes.csv") ))
+(scuba_cert <- read.csv(paste0(path, "/test_data/certifications.csv") ))  
 }
 #.........................................................
 ### DATA PROCESSING
@@ -88,9 +90,15 @@ scuba_map <- scuba_map %>% left_join(coords_scuba, by = "rowid")  %>%
 # Double check the Coordinate Reference System (CRS)
 print(st_crs(scuba_map))
 
+
+# scuba_cert to character
+scuba_cert <- scuba_cert %>% mutate(certificationDate = as.character(certificationDate))
+
+
 if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
 save(scuba_map, file = paste0(path, "/data/scuba_map.RData"))
 save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
+save(scuba_cert, file = paste0(path, "/data/scuba_cert.RData"))
 
 #save(scuba_map, file = paste0(path, "/data/scuba_map.rda"))
 #save(scuba_clean, file = paste0(path, "/data/scuba_clean.rda"))
@@ -99,7 +107,7 @@ save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
 
 
 # Return list with wanted objects
-x <- list(scuba_map = scuba_map, scuba_clean = scuba_clean)
+x <- list(scuba_map = scuba_map, scuba_clean = scuba_clean, scuba_cert = scuba_cert)
 
 return(x)
 }

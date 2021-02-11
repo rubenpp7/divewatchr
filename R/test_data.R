@@ -226,8 +226,31 @@ test_data_divetypes <- data.frame (diveType = c("Advanced Open Water Diver Cours
                                                     "Training"))
 
 
+test_data_certifications <- data.frame (diverID = c("XXXXXX",
+                                                    "XXXXXX",
+                                                    "XXXXXX",
+                                                    "XXXXXX"
+                                                    ),
+                                        certificationName = c("Open Water Diver",
+                                                              "Advanced Open Water Diver",
+                                                              "Rescue Diver",
+                                                              "Enriched Air Diver"
+                                                              ),
+                                        certificationAgency = c("PADI",
+                                                                "PADI",
+                                                                "PADI",
+                                                                "PADI"
+                                                                ),
+                                        certificationDate = c("2011-10-23",
+                                                              "2012-06-17",
+                                                              "2014-08-24",
+                                                              "2014-08-27"))
+
+
+
 if(!dir.exists(paste0(path, "/test_data"))) {dir.create("test_data")}
 write.csv(test_data_logbook, paste0(path, "/test_data/logbook.csv"), row.names = FALSE, na = "")
 write.csv(test_data_coordinates, paste0(path, "/test_data/coordinates.csv"), row.names = FALSE, na = "")
 write.csv(test_data_divetypes, paste0(path, "/test_data/divetypes.csv"), row.names = FALSE, na = "")
+write.csv(test_data_certifications, paste0(path, "/test_data/certifications.csv"), row.names = FALSE, na = "")
           }
