@@ -157,7 +157,7 @@ knitr::kable(dplyr::transmute (scuba_clean, eventDate, locationID, locality, max
 load('data/scuba_cert.RData')
 
 
-knitr::kable(scuba_cert)
+knitr::kable(scuba_cert %>% select (-instructorID))
 ```
 
 <!-- <h2>Maps and plots</h2> -->
