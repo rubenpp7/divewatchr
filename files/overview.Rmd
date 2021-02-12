@@ -7,7 +7,7 @@ output:
       toc: true
       toc_float: true
       theme: cerulean
-      df_print: kable 
+      df_print: paged
         
 ---
 <!-- "df_print: pages" can make pages out of the table-->
@@ -130,7 +130,7 @@ divetypes_platform()
 This data frame shows some highlights extracted from the diving logbook. Please take into account that not all the data (such as dates, depths or bottom times) are always recorded for every dive.
 
 ```{r echo=FALSE}
-logbook_highlights()
+kable(logbook_highlights())
 ```
 
 ***
@@ -144,7 +144,7 @@ This data frame shows the diving logbook used. Personal information such as even
 load('data/scuba_clean.RData')
 
 
-knitr::kable(dplyr::transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country))
+transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country)
 ```
 
 ***
@@ -156,8 +156,7 @@ knitr::kable(dplyr::transmute (scuba_clean, eventDate, locationID, locality, max
 ```{r echo=FALSE, rows.print=15}
 load('data/scuba_cert.RData')
 
-
-knitr::kable(scuba_cert %>% select (-instructorID))
+kable(scuba_cert %>% select (-instructorID))
 ```
 
 <!-- <h2>Maps and plots</h2> -->
