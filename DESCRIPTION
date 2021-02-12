@@ -24,7 +24,6 @@ Imports:   dplyr,
   forcats,
   tidyr,
   htmltools,
-  stringr,
-  knitr
+  stringr
 Depends: 
     R (>= 2.10)

@@ -130,7 +130,7 @@ divetypes_platform()
 This data frame shows some highlights extracted from the diving logbook. Please take into account that not all the data (such as dates, depths or bottom times) are always recorded for every dive.
 
 ```{r echo=FALSE}
-kable(logbook_highlights())
+knitr::kable(logbook_highlights())
 ```
 
 ***
@@ -156,7 +156,7 @@ transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumD
 ```{r echo=FALSE, rows.print=15}
 load('data/scuba_cert.RData')
 
-kable(scuba_cert %>% select (-instructorID))
+knitr::kable(scuba_cert %>% select (-instructorID))
 ```
 
 <!-- <h2>Maps and plots</h2> -->
