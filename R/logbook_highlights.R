@@ -10,6 +10,7 @@
 #' 
 #' @import tidyr
 #' @import dplyr
+#' @import stringr
 #' 
 #' @return Returns a data frame.
 #' 
@@ -22,7 +23,7 @@ logbook_highlights <- function(){
 
 load('data/scuba_clean.RData')
 
-gather(data.frame("Number_of_dives" = as.character(nrow(scuba_clean)),
+highlights <- gather(data.frame("Number_of_dives" = as.character(nrow(scuba_clean)),
                   "Number_of_dive_sites" = paste0(nrow(distinct(select(scuba_clean, locationID))),
                                                   " dive sites in ",
                                                   nrow(distinct(select(scuba_clean, country))),
@@ -43,6 +44,11 @@ gather(data.frame("Number_of_dives" = as.character(nrow(scuba_clean)),
                   ), 
        key = "Recorded", 
        value = "Value")
+
+highlights$Recorded <- highlights$Recorded %>% str_replace_all("_", " ")
+
+return(highlights)
+  
 
 }
 
