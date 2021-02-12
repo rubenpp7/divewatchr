@@ -23,7 +23,6 @@ Imports:   dplyr,
   rmarkdown,
   forcats,
   tidyr,
-  htmltools,
-  stringr
+  htmltools
 Depends: 
     R (>= 2.10)
