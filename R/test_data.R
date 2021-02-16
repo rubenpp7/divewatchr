@@ -244,7 +244,12 @@ test_data_certifications <- data.frame (diverID = c("XXXXXX",
                                         certificationDate = c("2011-10-23",
                                                               "2012-06-17",
                                                               "2014-08-24",
-                                                              "2014-08-27"))
+                                                              "2014-08-27"
+                                                              ),
+                                        instructorID = c("YYYYYY",
+                                                    "YYYYYY",
+                                                    "YYYYYY",
+                                                    "YYYYYY"))
 
 
 
