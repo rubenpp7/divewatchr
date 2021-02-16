@@ -16,7 +16,8 @@
 #' 
 #' @export
 #' @return 2 csv files with fake data.
-#' 
+#' @examples
+#' test_data()
 
 
 test_data <- function(path = getwd()){

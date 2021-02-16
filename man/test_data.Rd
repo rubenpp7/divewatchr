@@ -22,6 +22,9 @@ It can be used to test the other functions and to show the user how the data mus
 The output dataset must be copypasted in a google sheets spreadsheet and the user
 needs to make sure that the data is formatted as character/text
 }
+\examples{
+test_data()
+}
 \author{
 Ruben Perez Perez
 }

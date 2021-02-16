@@ -16,7 +16,7 @@
 #' 
 #' @export
 #' @examples
-#' divewatch("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+#' divewatch()
 
 
 divewatch <- function(data = NA){
