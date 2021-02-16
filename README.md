@@ -34,7 +34,10 @@ To create an `.html` file with and overview of your diving logbook just include 
 ```r
 divewatch(data = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 ``` 
-Visualize then your `.html` file in a Web browser to explore your data
+Visualize then your `.html` file in a Web browser to explore your data.
+
+As a matter of example you can access my own Divewatchr report here (<i>feel free to explore each tab and click and hover over the dive points of the interactive map to find more information about each dive</i>):
+<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
 
 <br/><br/>
 
@@ -77,9 +80,6 @@ To create an interactive map of the loaded logbook you can use the following fun
 logbook_map()
 
 ```
-
-As a matter of example you can access my own interactive map here (<i>feel free to click and hover over the dive points to find more information about each dive</i>):
-<a href="https://rubenpp7.github.io/" target="_blank">https://rubenpp7.github.io/</a> <i> open it in a new tab </i>
 
 ![](images/logbook_map2.png)
 
