@@ -1,7 +1,7 @@
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/rubenpp7/scuba_logbook/workflows/R-CMD-check/badge.svg)](https://github.com/rubenpp7/scuba_logbook/actions)
   <!-- badges: end -->
-
+  
 # Divewatchr R package
 
 The aim of this repository is the creation and development of the `divewatchr` R package for a thorough visualization and exploration of a SCUBA Diving Logbook, focusing on  spatio-temporal and categorical plots and maps.
