@@ -162,7 +162,6 @@ knitr::kable(scuba_cert %>% select (-instructorID))
 <!-- <h2>Maps and plots</h2> -->
 ## About
 
-- Citation
 - Column names explanation
 
 
