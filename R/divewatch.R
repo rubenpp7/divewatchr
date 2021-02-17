@@ -16,7 +16,9 @@
 #' 
 #' @export
 #' @examples
-#' divewatch()
+#' \dontrun{
+#' divewatch("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+#' }
 
 
 divewatch <- function(data = NA){

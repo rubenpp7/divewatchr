@@ -23,7 +23,9 @@ This function reads, prepares and locates in the chosen repository the data from
 so it can be used by the rest of the functions
 }
 \examples{
-prep_data()
+\dontrun{
+prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
+}
 }
 \author{
 Ruben Perez Perez
