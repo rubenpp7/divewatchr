@@ -20,6 +20,7 @@
 #' 
 #' @export
 #' @examples
+#' prep_data()
 #' \dontrun{
 #' prep_data("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 #' }

@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "ruben.perper@gmail.com")
 Description: This package allows for a thorough visualization of a diving logbook, including spatio-temporal and categorical plots and maps.
-License: CC BY 4.0
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

@@ -21,6 +21,7 @@ This function uses all the other functions of the divewatchr R package to create
 of the diving logbook loaded using plots and maps in order to to explore it
 }
 \examples{
+divewatch()
 \dontrun{
 divewatch("1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo")
 }
