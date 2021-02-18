@@ -4,7 +4,7 @@
 \alias{logbook_map}
 \title{Logged dives map}
 \usage{
-logbook_map()
+logbook_map(path = getwd())
 }
 \value{
 Returns a map.

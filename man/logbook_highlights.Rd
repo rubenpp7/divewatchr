@@ -4,7 +4,7 @@
 \alias{logbook_highlights}
 \title{Logbook highlights}
 \usage{
-logbook_highlights()
+logbook_highlights(path = getwd())
 }
 \value{
 Returns a data frame.

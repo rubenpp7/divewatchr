@@ -19,9 +19,19 @@
 
 #.........................................................
 
-logbook_highlights <- function(){
+logbook_highlights <- function(path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_clean.RData')
+  }
+    
+  # } else {
+  #   
+  #   load('data/scuba_clean.RData')  
+  # }
 
-load('data/scuba_clean.RData')
+
 
 highlights <- gather(data.frame("Number_of_dives" = as.character(nrow(scuba_clean)),
                   "Number_of_dive_sites" = paste0(nrow(distinct(select(scuba_clean, locationID))),

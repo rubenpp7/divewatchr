@@ -20,9 +20,12 @@
 #-----------------------------------------------------------------------------------------------------
 
 
-logged_depths <- function (){
-
-  load("data/scuba_map.RData")
+logged_depths <- function (path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_map.RData')
+  }
 # The problem of making the previous function is that scuba_map does not get generated
 
 # Plot date against max depths https://www.neonscience.org/dc-time-series-plot-ggplot-r

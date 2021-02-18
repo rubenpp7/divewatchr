@@ -19,9 +19,12 @@
 
 #.........................................................
 
-divetypes <- function (n.other = 4){
+divetypes <- function (n.other = 4, path = getwd()){
   
-  load("data/scuba_clean.RData")
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_clean.RData')
+  }
   # Plot platformTypes
 types <-  count(scuba_clean, diveType, diveClass) %>%
           mutate(diveType = ifelse(n < n.other, "Other", diveType),

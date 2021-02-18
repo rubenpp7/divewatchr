@@ -4,7 +4,7 @@
 \alias{divecount_reg}
 \title{Number of dives per region plot}
 \usage{
-divecount_reg()
+divecount_reg(path = getwd())
 }
 \value{
 Returns a barplot.

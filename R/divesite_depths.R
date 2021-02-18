@@ -21,9 +21,12 @@
 
 #.........................................................
 
-divesite_depths <- function (toofew = 1){
-
-  load("data/scuba_map.RData")
+divesite_depths <- function (toofew = 1, path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_map.RData')
+  }
 
 # Drop locations where there is only 1 dive since the point of this plot is showing variation
   y <- scuba_map %>% filter (locationID %in% (scuba_map %>%

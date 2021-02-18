@@ -4,7 +4,7 @@
 \alias{cum_dives}
 \title{Cumulative dives plot}
 \usage{
-cum_dives()
+cum_dives(path = getwd())
 }
 \value{
 Returns a plot.

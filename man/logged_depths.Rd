@@ -4,7 +4,7 @@
 \alias{logged_depths}
 \title{Logged dive max depths}
 \usage{
-logged_depths()
+logged_depths(path = getwd())
 }
 \value{
 Returns a boxplot.

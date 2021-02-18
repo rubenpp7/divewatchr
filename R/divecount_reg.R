@@ -16,10 +16,12 @@
 
 #.........................................................
 
-divecount_reg <- function (){
+divecount_reg <- function (path = getwd()){
   
-  # Plot dives per country and region
-  load("data/scuba_clean.RData")
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_clean.RData')
+  }
   
   ggplot(scuba_clean, aes(x = country, fill = paste0(region, ", " ,country))) +
     geom_bar(alpha = 0.7, position = "dodge2") +

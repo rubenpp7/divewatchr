@@ -4,7 +4,7 @@
 \alias{divesite_depths}
 \title{Depth variation per divesite}
 \usage{
-divesite_depths(toofew = 1)
+divesite_depths(toofew = 1, path = getwd())
 }
 \arguments{
 \item{toofew}{number of logged dives per divesite under which a divesite is excluded

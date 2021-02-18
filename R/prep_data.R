@@ -41,12 +41,12 @@ if(!is.na(data)){
 (scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
 (scuba_cert <- read_sheet(data, sheet = "certifications", na = ""))  
 } else {
-test_data()
+example_data() # not necessary this line because data will be a permanent shared folder and downloadable -- see later
 # From the test_data (in case sheets don't work)
-(scuba_log <- read.csv(paste0(path, "/test_data/logbook.csv") ))
-(scuba_geo <- read.csv(paste0(path, "/test_data/coordinates.csv") ))
-(scuba_typ <- read.csv(paste0(path, "/test_data/divetypes.csv") ))
-(scuba_cert <- read.csv(paste0(path, "/test_data/certifications.csv") ))  
+(scuba_log <- read.csv(paste0(path, "/data-raw/logbook.csv") ))
+(scuba_geo <- read.csv(paste0(path, "/data-raw/coordinates.csv") ))
+(scuba_typ <- read.csv(paste0(path, "/data-raw/divetypes.csv") ))
+(scuba_cert <- read.csv(paste0(path, "/data-raw/certifications.csv") ))  
 }
 #.........................................................
 ### DATA PROCESSING
@@ -98,10 +98,17 @@ print(st_crs(scuba_map))
 scuba_cert <- scuba_cert %>% mutate(certificationDate = as.character(certificationDate))
 
 
-if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
-save(scuba_map, file = paste0(path, "/data/scuba_map.RData"))
-save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
-save(scuba_cert, file = paste0(path, "/data/scuba_cert.RData"))
+if(!is.na(data)){ 
+  if(!dir.exists(paste0(path, "/divewatchr_data"))) {dir.create("divewatchr_data")}
+    save(scuba_map, file = paste0(path, "/divewatchr_data/scuba_map.RData"))
+    save(scuba_clean, file = paste0(path, "/divewatchr_data/scuba_clean.RData"))
+    save(scuba_cert, file = paste0(path, "/divewatchr_data/scuba_cert.RData"))
+} else {
+  if(!dir.exists(paste0(path, "/data"))) {dir.create("data")}
+    save(scuba_map, file = paste0(path, "/data/scuba_map.RData"))
+    save(scuba_clean, file = paste0(path, "/data/scuba_clean.RData"))
+    save(scuba_cert, file = paste0(path, "/data/scuba_cert.RData"))
+}
 
 #save(scuba_map, file = paste0(path, "/data/scuba_map.rda"))
 #save(scuba_clean, file = paste0(path, "/data/scuba_clean.rda"))

@@ -15,9 +15,12 @@
 
 #.........................................................
 
-divetypes_platform <- function (){
-
-  load("data/scuba_clean.RData")
+divetypes_platform <- function (path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_clean.RData')
+  }
   # Plot platformTypes
   ggplot(scuba_clean, aes(x = platformType, fill = paste0(region, ", " ,country))) +
     geom_bar(alpha = 0.7, position = "dodge2") +

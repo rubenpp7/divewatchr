@@ -18,10 +18,13 @@
 
 #.........................................................
 
-logbook_map <- function (){
-
-  load("data/scuba_map.RData")
-  load("data/scuba_clean.RData")
+logbook_map <- function (path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_clean.RData')
+    load('divewatchr_data/scuba_map.RData')
+  }
 ### MAKING MAP
 #--------------------
 

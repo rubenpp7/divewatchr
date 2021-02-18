@@ -17,9 +17,19 @@
 
 
 
-cum_dives <- function(){
-
-load("data/scuba_map.RData")
+cum_dives <- function(path = getwd()){
+  
+  if(dir.exists(paste0(path, "/divewatchr_data"))){
+    
+    load('divewatchr_data/scuba_map.RData')
+  }
+    
+  # } else {
+  #   
+  #   load('data/scuba_map.RData')  
+  # }
+  
+  
 scuba_map_cum <- scuba_map %>% mutate(cum_dives = seq(1, nrow(scuba_map)))                     
      
 ggplot(scuba_map_cum, 

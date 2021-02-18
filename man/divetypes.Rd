@@ -4,7 +4,7 @@
 \alias{divetypes}
 \title{Number of dives per dive type}
 \usage{
-divetypes(n.other = 4)
+divetypes(n.other = 4, path = getwd())
 }
 \arguments{
 \item{n.other}{number of dives under which a diveType is placed into the "Other" category.}
