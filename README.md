@@ -1,6 +1,7 @@
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/rubenpp7/scuba_logbook/workflows/R-CMD-check/badge.svg)](https://github.com/rubenpp7/scuba_logbook/actions)
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![codecov](https://codecov.io/gh/rubenpp7/divewatchr/branch/master/graph/badge.svg?token=FR2D2ZZV2M)](https://codecov.io/gh/rubenpp7/divewatchr)
   <!-- badges: end -->
   
 # Divewatchr R package
