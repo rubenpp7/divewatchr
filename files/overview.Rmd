@@ -141,7 +141,10 @@ knitr::kable(logbook_highlights())
 This data frame shows the diving logbook used. Personal information such as eventRemarks are omitted from this data frame
 
 ```{r echo=FALSE, rows.print=15}
-load('divewatchr_data/scuba_clean.RData')
+if(dir.exists("divewatchr_data")){
+    
+    load('divewatchr_data/scuba_clean.RData')
+  }
 
 
 transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumDepthInMeters, bottomTime, diveType, diveClass, platformType, region, country)
@@ -154,7 +157,10 @@ transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumD
 ## Certifications 
 
 ```{r echo=FALSE, rows.print=15}
-load('divewatchr_data/scuba_cert.RData')
+if(dir.exists("divewatchr_data")){
+    
+    load('divewatchr_data/scuba_cert.RData')
+  }
 
 knitr::kable(scuba_cert %>% select (-instructorID))
 ```
