@@ -6,6 +6,9 @@
 \usage{
 logged_depths(path = getwd())
 }
+\arguments{
+\item{path}{directory location where the files will be read from or written into}
+}
 \value{
 Returns a boxplot.
 }

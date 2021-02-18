@@ -5,6 +5,7 @@
 #' This function creates a barplot to visualize the number of dives types "Course Leading", "Course Assistance", etc.
 #' 
 #' @param n.other number of dives under which a diveType is placed into the "Other" category.
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

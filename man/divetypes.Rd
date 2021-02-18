@@ -8,6 +8,8 @@ divetypes(n.other = 4, path = getwd())
 }
 \arguments{
 \item{n.other}{number of dives under which a diveType is placed into the "Other" category.}
+
+\item{path}{directory location where the files will be read from or written into}
 }
 \value{
 Returns a barplot.

@@ -5,6 +5,7 @@
 #' This function creates a scatterplot to visualize the maximum depths logged through time, offering a nice overview
 #' of the diving experience regarding depth
 #' 
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

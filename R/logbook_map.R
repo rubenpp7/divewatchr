@@ -5,6 +5,7 @@
 #' This function creates a leaflet map to visualize the geographical coverage of the logbook together with some information on each dive such as
 #' Bottom Time, Max Depth, Date and Divesite
 #' 
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

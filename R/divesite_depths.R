@@ -7,6 +7,7 @@
 #' 
 #' @param toofew number of logged dives per divesite under which a divesite is excluded 
 #' from the boxplot for having too few dives for an appropriate interpretation of the depth variation
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

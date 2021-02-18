@@ -9,6 +9,8 @@ divesite_depths(toofew = 1, path = getwd())
 \arguments{
 \item{toofew}{number of logged dives per divesite under which a divesite is excluded
 from the boxplot for having too few dives for an appropriate interpretation of the depth variation}
+
+\item{path}{directory location where the files will be read from or written into}
 }
 \value{
 Returns a boxplot.

@@ -5,6 +5,7 @@
 #' This function creates a data frame to have an overview of some highlights of the diving logbook  
 #' such as number of recorded dives, maximum bottom time or maximum depth
 #' 
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

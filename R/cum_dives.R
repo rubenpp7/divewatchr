@@ -4,6 +4,7 @@
 #'
 #' This function creates some visualizations of the number of dives along time including a density plot and a fitted model 
 #' 
+#' @param path directory location where the files will be read from or written into
 #' 
 #' @author Ruben Perez Perez
 #' 

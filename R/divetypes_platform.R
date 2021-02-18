@@ -4,6 +4,8 @@
 #'
 #' This function creates a barplot to visualize the number of dives per region and platform type "poolDive", "boatDive" or "shoreDive"
 #' 
+#' @param path directory location where the files will be read from or written into
+#' 
 #' @author Ruben Perez Perez
 #' 
 #' @import ggplot2
