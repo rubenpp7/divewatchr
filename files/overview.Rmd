@@ -4,8 +4,8 @@ author: "Ruben Perez Perez"
 date: "`r Sys.Date()`"
 output: 
   html_document:
-      toc: true
-      toc_float: true
+   ## toc: true
+   ## toc_float: true
       theme: cerulean
       df_print: paged
         
@@ -18,12 +18,16 @@ output:
 knitr::opts_chunk$set(fig.width=8, fig.height=5.34, fig.path='Figs/',
                       warning=FALSE, message=FALSE)
 
+
+## The following lines will be used to test the .Rmd file without being pushed:
+
 # Sets the working directory to parent directory of where the .Rmd is (usually in the files folder)
 # knitr::opts_knit$set(root.dir = normalizePath(".."))
 
 # Installs and calls the divewatchr R package
 # devtools::install_github("rubenpp7/divewatchr")
 # library(divewatchr)
+# library(dplyr)
 
 
 ```  
@@ -165,10 +169,8 @@ if(dir.exists("divewatchr_data")){
 knitr::kable(scuba_cert %>% select (-instructorID))
 ```
 
-<!-- <h2>Maps and plots</h2> -->
-## About
-
-- Column names explanation
+<!-- <h2>Maps and plots</h2> 
+## About -->
 
 
 
