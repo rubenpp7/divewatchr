@@ -34,7 +34,7 @@ knitr::opts_chunk$set(fig.width=8, fig.height=5.34, fig.path='Figs/',
 
 <br></br>
 
-This document has been created using the [Divewatchr R package](https://github.com/rubenpp7/divewatchr) and it provides a thorough visualization and exploration of a SCUBA Diving Logbook through spatio-temporal and categorical plots and maps.
+This document provides a thorough visualization and exploration of a SCUBA Diving Logbook through the usage of spatio-temporal and categorical plots and maps and informative data tables.
 <i>Please note that some plots may seem incomplete. This is due to the lack of high quality data in the logbook, e.g. maximumDepthInMeters, locationID and bottomTime were not recorded for all the dives.</i>
 
 
