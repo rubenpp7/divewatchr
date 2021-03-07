@@ -52,6 +52,36 @@ example_data() # not necessary this line because data will be a permanent shared
 ### DATA PROCESSING
 #--------------------
 
+## Making sure that there are no fields missing
+  
+  # Listing mandatory fields per table
+log_fields <- c("eventDate", "locationID", "maximumDepthInMeters", "bottomTime", "waterTemperature",
+            "diveType", "eventTime", "eventID")
+geo_fields <- c("locationID", "locality", "region",	"country", "decimalLatitude", "decimalLongitude",	"platformType")
+typ_fields <- c("diveType",	"diveClass")
+cert_fields <- c("diverID", "certificationName", "certificationAgency", "certificationDate", "instructorID")
+
+
+# Error message if missing mandatory fields
+if(sum(!(log_fields %in% names(scuba_log))) |
+   sum(!(geo_fields %in% names(scuba_geo))) |
+   sum(!(typ_fields %in% names(scuba_typ))) |
+   sum(!(cert_fields %in% names(scuba_cert)))) 
+  
+   stop('missing mandatory fields, create them even if they are empty. Mandatory fields: 
+   
+                       Logbook --> "eventDate", "locationID", "maximumDepthInMeters", "bottomTime", 
+                                   "waterTemperature", "diveType", "eventTime", "eventID".
+                                   
+                       Coordinates --> "locationID", "locality", "region",	"country", "decimalLatitude",
+                                       "decimalLongitude",	"platformType".
+                                   
+                       Divetypes --> "diveType",	"diveClass".
+                                   
+                       Certifications --> "diverID", "certificationName", "certificationAgency", 
+                                         "certificationDate", "instructorID".')
+  
+  
 ## Preparation for Leaflet:
 
 
