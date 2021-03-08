@@ -23,6 +23,7 @@ cum_dives <- function(path = getwd()){
   if(dir.exists(paste0(path, "/divewatchr_data"))){
     
     load('divewatchr_data/scuba_map.RData')
+    load('divewatchr_data/scuba_cert.RData')
   }
     
   # } else {
@@ -56,11 +57,20 @@ ggplot(scuba_map_cum,
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   
   
-  geom_vline(xintercept = as.Date(c("2011-10-23", "2012-06-17", "2014-08-27", "2016-07-15")),
-             linetype = "dashed",
-             color = c("deepskyblue1","deepskyblue2","deepskyblue3","deepskyblue4"),
-             size = 0.6,
-             alpha = 0.6) 
+  # geom_vline(xintercept = as.Date(c("2011-10-23", "2012-06-17", "2014-08-27", "2016-07-15")),
+  #            linetype = "dashed",
+  #            color = c("deepskyblue1","deepskyblue2","deepskyblue3","deepskyblue4"),
+  #            size = 0.6,
+  #            alpha = 0.6) +
+  
+ # geom_label_repel(data = scuba_cert, aes(x = as.Date(certificationDate), y = nrow(scuba_map)/5, label = certificationName)) +
+  geom_jitter(data = scuba_cert, aes(x = as.Date(certificationDate), 
+                                         y = -nrow(scuba_map)/(nrow(scuba_map)/10), 
+                                         color = certificationName),
+             alpha = 0.35, size = 6) + 
+  
+  guides(color=guide_legend(title="Certification Name"))
+
 }
 
 

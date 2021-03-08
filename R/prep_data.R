@@ -125,7 +125,8 @@ print(st_crs(scuba_map))
 
 
 # scuba_cert to character
-scuba_cert <- scuba_cert %>% mutate(certificationDate = as.character(certificationDate))
+scuba_cert <- scuba_cert %>% mutate(certificationDate = as.character(certificationDate)) %>%
+                             arrange(certificationDate)
 
 
 if(!is.na(data)){ 
