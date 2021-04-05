@@ -26,7 +26,7 @@ Imports: dplyr,
   htmltools,
   ggExtra
 Depends: 
-    R (>= 3.5)
+    R (>= 2.10)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
