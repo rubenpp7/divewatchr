@@ -38,6 +38,7 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             textInput('url','Google Spreadsheet page ID', value = "1PpXTVS8LdzbvwLHyAAhR2MdT9Iwdy-hiqJknUzF7Yqo"),
+            textInput('email','Email account to access the Logbook', value = ""),
             actionButton("load","Load",icon("refresh")),
             uiOutput("downloadbutton") # to download the html file from divewatch()
             
@@ -80,7 +81,7 @@ server <- function(input, output, session) {
     
     CheckDataset<-reactive({
         req(values$sourceURL)
-        return(divewatch (values$sourceURL))
+        return(divewatch (values$sourceURL, input$email))
     })
     
     
