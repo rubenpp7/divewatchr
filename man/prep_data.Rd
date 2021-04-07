@@ -4,13 +4,11 @@
 \alias{prep_data}
 \title{Prepares the data}
 \usage{
-prep_data(data = NA, email = NA, path = getwd())
+prep_data(data = NA, path = getwd())
 }
 \arguments{
 \item{data}{The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
 by the test_data function will be read}
-
-\item{email}{email account that will be used to access the Logbook in Google Spreadsheet}
 
 \item{path}{directory location where the files will be read from or written into}
 }

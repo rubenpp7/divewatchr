@@ -7,7 +7,6 @@
 #' 
 #' @param data The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
 #' by the test_data function will be read
-#' @param email email account that will be used to access the Logbook in Google Spreadsheet
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -23,9 +22,8 @@
 #' }
 
 
-divewatch <- function(data = NA,
-                      email = NA){
-              prep_data(data, email)
+divewatch <- function(data = NA){
+              prep_data(data)
               download.file("https://raw.githubusercontent.com/rubenpp7/divewatchr/master/files/overview.Rmd",
                         "overview.Rmd")
               render("overview.Rmd")
