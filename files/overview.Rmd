@@ -8,6 +8,7 @@ output:
    ## toc_float: true
       theme: cerulean
       df_print: paged
+      mathjax: null
         
 ---
 <!-- "df_print: pages" can make pages out of the table-->
