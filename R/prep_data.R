@@ -8,6 +8,7 @@
 #' @param data The URL ID of the database in google sheets, if no URL is provided a mock dataset generated
 #' by the test_data function will be read
 #' @param path directory location where the files will be read from or written into
+#' @param email email account that will be used to access the Logbook in Google Spreadsheet
 #' 
 #' @author Ruben Perez Perez
 #' 
@@ -29,7 +30,7 @@
 
 
 prep_data <- function (data = NA,
-                       #email = NA,
+                       email = NA,
                        path = getwd()){
 
 ### READ DATA
@@ -37,8 +38,7 @@ prep_data <- function (data = NA,
 
 if(!is.na(data)){  
 # From Google sheets
-#gs4_auth(email)
-gs4_deauth()  
+gs4_auth(email)
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 (scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
