@@ -38,7 +38,7 @@ prep_data <- function (data = NA,
 
 if(!is.na(data)){  
 # From Google sheets
-gs4_auth(email)
+gs4_auth(email, cache = ".secrets")
 (scuba_log <- read_sheet(data, sheet = "logbook", na = "")) 
 (scuba_geo <- read_sheet(data, sheet = "coordinates", na = ""))
 (scuba_typ <- read_sheet(data, sheet = "divetypes", na = ""))
