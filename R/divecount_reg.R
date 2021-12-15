@@ -24,11 +24,12 @@ divecount_reg <- function (path = getwd()){
     load('divewatchr_data/scuba_clean.RData')
   }
   
-  ggplot(scuba_clean, aes(x = country, fill = paste0(region, ", " ,country))) +
+  ggplot(scuba_clean %>% filter(platformType != "poolDive"), aes(x = country, fill = paste0(region, ", " ,country))) +
     geom_bar(alpha = 0.7, position = "dodge2") +
-    ggtitle("Dives per country and region") +
+    ggtitle("Dives per country, region and platform") +
     labs(x = "",
          fill = "Region") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    facet_grid(factor(platformType, levels=c('boatDive','shoreDive')) ~., scales="free") 
 }
 
