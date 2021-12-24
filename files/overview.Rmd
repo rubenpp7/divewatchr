@@ -93,9 +93,9 @@ logged_depths()
 ***
 <br/><br/>
 
-### Dives per country and region
+### Dives per region and platform
 
-This barplot shows the number of dives per region and country. It reflects the experience of the diver regarding variety of divesites.
+This barplot shows the number of dives per region, country and platform of entrance to the water. It reflects the experience of the diver regarding variety of divesites while providing a glimpse of the experience of the diver regarding the entrance to the water.
 
 ```{r echo=FALSE}
 divecount_reg()
@@ -112,16 +112,16 @@ This boxplot shows the maximum depth variation of each divesite according to the
 divesite_depths()
 ```
 
-***
-<br/><br/>
+<!-- *** -->
+<!-- <br/><br/> -->
 
-### Platform type dives
+<!-- ### Platform type dives -->
 
-This barplot shows the number of dives per platform and region/country (boat, shore, pool). This plot gives a glimpse of the experience of the diver regarding the entrance to the water.
+<!-- This barplot shows the number of dives per platform and region/country (boat, shore, pool). This plot gives a glimpse of the experience of the diver regarding the entrance to the water. -->
 
-```{r echo=FALSE}
-divetypes_platform()
-```
+<!-- ```{r echo=FALSE} -->
+<!-- divetypes_platform() -->
+<!-- ``` -->
 
 ***
 <br/><br/>
