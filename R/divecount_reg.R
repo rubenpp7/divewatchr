@@ -26,7 +26,7 @@ divecount_reg <- function (path = getwd()){
   
   ggplot(scuba_clean %>% filter(platformType != "poolDive"), aes(x = country, fill = paste0(region, ", " ,country))) +
     geom_bar(alpha = 0.7, position = "dodge2") +
-    ggtitle("Dives per country, region and platform") +
+    ggtitle("Dives per region and platform") +
     labs(x = "",
          fill = "Region") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
