@@ -24,7 +24,9 @@ Imports: dplyr,
   forcats,
   tidyr,
   htmltools,
-  ggExtra
+  ggExtra,
+  gargle,
+  base64enc
 Depends: 
     R (>= 2.10)
 Suggests: 
