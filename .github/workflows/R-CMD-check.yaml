@@ -24,8 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages('remotes')
-          remotes::install_deps(dependencies = TRUE)
+          R -e 'if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")'
+          R -e 'remotes::install_deps(dependencies = TRUE)'
 
       - name: Cache R packages
         uses: actions/cache@v3
