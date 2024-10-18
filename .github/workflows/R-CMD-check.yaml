@@ -22,10 +22,11 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install dependencies
+      - name: Install system dependencies for sf and leaflet
         run: |
-          R -e 'if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")'
-          R -e 'remotes::install_deps(dependencies = TRUE)'
+          sudo apt-get update
+          sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev \
+                                  libcurl4-openssl-dev libssl-dev libxml2-dev
 
       - name: Cache R packages
         uses: actions/cache@v3
@@ -33,6 +34,14 @@ jobs:
           path: ${{ runner.temp }}/R/cache
           key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
           restore-keys: ${{ runner.os }}-r-
+
+      - name: Install dependencies
+        run: |
+          R -e 'if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")'
+          R -e 'remotes::install_deps(dependencies = TRUE)'
+
+      - name: Install R packages if needed
+        run: Rscript -e 'install.packages(c("googlesheets4", "leaflet", "sf", "usethis"))'
 
       - name: Install pandoc
         uses: r-lib/actions/setup-pandoc@v2
@@ -46,3 +55,4 @@ jobs:
         with:
           name: R-CMD-check-results
           path: check-*.Rcheck/
+
