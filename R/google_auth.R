@@ -29,14 +29,14 @@ google_auth <- function(email = NA) {
 oauth_token_path <- ".config/gcloud/google-oauth-token.rds"
 
 # Check if we are running in GitHub Actions by looking for the environment variable
-if (Sys.getenv("GITHUB_ACTIONS") == "true") {
-  # Retrieve the Base64-encoded OAuth token from the environment (GitHub Secrets)
-  base64_token <- Sys.getenv("GOOGLE_OAUTH_TOKEN_BASE64")
-  
-  # Decode the Base64 string and write it to a binary RDS file
-  decoded_token <- base64decode(base64_token)
-  writeBin(decoded_token, oauth_token_path)
-}
+# if (Sys.getenv("GITHUB_ACTIONS") == "true") {
+#   # Retrieve the Base64-encoded OAuth token from the environment (GitHub Secrets)
+#   base64_token <- Sys.getenv("GOOGLE_OAUTH_TOKEN_BASE64")
+#   
+#   # Decode the Base64 string and write it to a binary RDS file
+#   decoded_token <- base64decode(base64_token)
+#   writeBin(decoded_token, oauth_token_path)
+# }
 
 # Load the OAuth token from the RDS file and authenticate
 if (file.exists(oauth_token_path)) {
