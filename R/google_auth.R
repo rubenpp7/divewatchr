@@ -9,9 +9,7 @@
 #' 
 #' @author Ruben Perez Perez
 #' 
-#' @import gargle 
 #' @import googlesheets4
-#' @import base64enc
 #' 
 #' @return It provides access to a given Google sheet if there is a token stored.
 #' 
