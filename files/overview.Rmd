@@ -157,7 +157,7 @@ transmute (scuba_clean, eventDate, locationID, locality, maximumDepth = maximumD
 ***
 <br/><br/>
 
-<!-- <h2>Data</h2> -->
+<!-- <h2>Certifications</h2> -->
 ## Certifications 
 
 ```{r echo=FALSE, rows.print=15}
@@ -167,19 +167,4 @@ if(dir.exists("divewatchr_data")){
   }
 
 knitr::kable(scuba_cert %>% select (-instructorID))
-```
-
-<!-- <h2>Maps and plots</h2> 
-## About -->
-
-
-
-```{r echo=FALSE}
-# setwd("C:/Users/rubenp/Desktop/Huiswerk 2020/Logbook Scuba Ruben Perez/divewatchr")
-# load('data/scuba_map.RData')
-# load('data/scuba_clean.RData')
-
-#scuba_clean[92:101,] %>% select (rowid, eventDate, locationID, locality, region, country, 
-#                                maximumDepthInMeters, bottomTime, diveType,
-#                                platformType, diveClass, decimalLongitude, decimalLatitude)
 ```
